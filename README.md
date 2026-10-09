@@ -1,0 +1,1 @@
+# handball-academy-manager
