@@ -12,25 +12,38 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 14px;font-weight:700}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:var(--navy);color:white}.secondary{background:var(--pale);color:var(--navy)}.danger{background:#feeceb;color:var(--red)}.success{background:#e4f6ee;color:var(--green)}.muted{color:var(--muted)}.small{font-size:12px}.appbar{background:var(--navy);color:white;padding:18px 16px 24px;border-radius:0 0 24px 24px}.brand{display:flex;align-items:center;gap:12px}.ball{width:52px;height:52px;flex-shrink:0;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--navy);font-size:30px;overflow:hidden}.ball.logo-ball img{width:100%;height:100%;object-fit:cover;border-radius:inherit}.appbar h1{font-size:18px;margin:0}.appbar p{font-size:12px;margin:4px 0 0;color:#d6e4f0}.appbar .topline{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:13px}.wrap{max-width:760px;margin:auto;padding:14px 14px 90px}.card{background:white;border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 4px 18px #102a430c}.card h2{font-size:17px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{background:#f7f9fc;border:1px solid #edf1f5;border-radius:14px;padding:14px}.stat strong{display:block;font-size:25px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field label{font-size:13px;font-weight:700}.field input,.field select{width:100%;padding:12px;border:1px solid #d8e0e8;border-radius:11px;background:white;color:var(--ink)}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5eaf0;display:flex;justify-content:center;gap:4px;padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:5}.nav button{flex:1;max-width:150px;background:transparent;color:var(--muted);font-size:12px;padding:8px 3px}.nav button.active{background:var(--pale);color:var(--navy)}.player{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #edf1f5}.player:last-child{border-bottom:0}.avatar{width:38px;height:38px;border-radius:12px;background:var(--pale);display:grid;place-items:center;font-weight:800;color:var(--navy)}.playerinfo{flex:1;min-width:0}.playerinfo strong{display:block;font-size:14px}.playerinfo small{color:var(--muted)}.statusbtn{padding:8px 9px;font-size:12px;min-width:67px}.present{background:#e3f6ed;color:var(--green)}.absent{background:#ffebea;color:var(--red)}.excused{background:#fff2d9;color:var(--amber)}.pill{display:inline-block;border-radius:20px;padding:5px 9px;background:#edf2f7;font-size:11px;color:var(--navy)}.empty{text-align:center;padding:26px 10px;color:var(--muted)}.hidden{display:none!important}.notice{background:#fff5d9;border:1px solid #f5df9d;color:#795000;padding:11px 12px;border-radius:12px;font-size:12px;line-height:1.6}.login{max-width:430px;margin:28px auto;padding:0 16px}.login .card{padding:22px}.loginlogo{text-align:center;padding:18px 0}.loginlogo .ball{margin:0 auto 10px;width:72px;height:72px;font-size:42px}.loginlogo h1{font-size:21px;margin:0}.loginlogo p{margin:5px;color:var(--muted);font-size:13px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px}.sectionhead h2{margin:0}.reportrow{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #edf1f5;font-size:13px}.reportrow:last-child{border:0}.toast{position:fixed;top:12px;left:12px;right:12px;z-index:20;background:#142333;color:white;border-radius:12px;padding:13px;text-align:center;box-shadow:0 8px 30px #0002}.foot{text-align:center;color:var(--muted);font-size:11px;margin-top:20px}
 @media(min-width:600px){.wrap{padding-top:22px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.appbar{padding-left:max(20px,calc((100% - 730px)/2));padding-right:max(20px,calc((100% - 730px)/2))}}
 
-/* Premium Handball Academy visual refresh */
-:root{--navy:#071b33;--blue:#1769e8;--pale:#e7f0ff;--bg:#eef3f9;--ink:#10233c;--muted:#6c7b91;--green:#13845b;--red:#c63c48;--amber:#a96500}
-body{background:radial-gradient(ellipse at top right,#dbeafe 0,transparent 38%),linear-gradient(180deg,#eef4fb 0%,#f7f9fc 55%,#edf2f8 100%);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif}
-.appbar{position:relative;overflow:hidden;background:linear-gradient(135deg,#071b33 0%,#103e78 60%,#1769e8 120%);padding:22px 18px 27px;border-radius:0 0 30px 30px;box-shadow:0 12px 30px #0b2a4c2b}
-.appbar:after{content:"";position:absolute;left:-35px;bottom:-90px;width:230px;height:230px;border:1px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 22px #ffffff08,0 0 0 48px #ffffff06;pointer-events:none}
-.brand,.topline{position:relative;z-index:1}.ball{border-radius:18px;box-shadow:0 6px 18px #020c1b30}.appbar h1{font-size:17px}.appbar p{color:#d9e8ff}
-.wrap{padding:16px 14px 108px}.card{background:rgba(255,255,255,.97);border:1px solid #fff;border-radius:22px;padding:17px;margin:13px 0;box-shadow:0 8px 24px #16365a0d,0 2px 5px #16365a08}
-.card h2{font-size:17px;font-weight:800}.grid{gap:11px}.stat{position:relative;overflow:hidden;background:linear-gradient(145deg,#fff,#f6f9ff);border:1px solid #e4ecf7;border-radius:19px;padding:15px;box-shadow:0 5px 15px #16365a08}
-.stat:after{content:"";position:absolute;top:-18px;left:-18px;width:54px;height:54px;border-radius:50%;background:#dceaff66}.stat strong{font-size:28px;position:relative;z-index:1;color:#0b2c52}.stat span{position:relative;z-index:1;font-weight:650}
+/* Colorful academy theme */
+:root{--navy:#081d35;--blue:#1769e8;--pale:#e5efff;--bg:#eaf0f8;--ink:#10243d;--muted:#60738b;--green:#12845b;--red:#c73545;--amber:#a96500}
+body{background:radial-gradient(circle at 8% 15%,#c8e2ff 0,transparent 30%),radial-gradient(circle at 95% 40%,#d9d2ff 0,transparent 25%),linear-gradient(160deg,#e9f2ff,#f1f4fb 50%,#e6f8f2);color:var(--ink)}
+.appbar{background:linear-gradient(130deg,#06172c 0%,#103d76 52%,#1769e8 100%);box-shadow:0 12px 28px #0b2a4c30;border-radius:0 0 30px 30px;position:relative;overflow:hidden}
+.appbar:after{content:"";position:absolute;left:-42px;bottom:-100px;width:240px;height:240px;border:2px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 20px #ffffff0a,0 0 0 45px #ffffff08;pointer-events:none}
+.brand,.topline{position:relative;z-index:1}.ball{box-shadow:0 5px 18px #0003;border:2px solid #ffffff80}
+.wrap{padding-bottom:108px}
+.card{background:linear-gradient(145deg,#fff 0%,#f5f8ff 100%);border:1px solid #dfe9f7;border-radius:22px;box-shadow:0 8px 24px #12365b12,0 2px 6px #12365b08}
+.card h2{color:#102f55}.grid{gap:11px}
+.stat{position:relative;overflow:hidden;border:0;border-radius:19px;padding:15px;background:linear-gradient(145deg,#fff,#e7f0ff);box-shadow:0 7px 17px #16365a12}
+.stat:nth-child(4n+1){background:linear-gradient(140deg,#e2efff,#c9e0ff)}.stat:nth-child(4n+2){background:linear-gradient(140deg,#def8ec,#c5f0dd)}.stat:nth-child(4n+3){background:linear-gradient(140deg,#fff0d5,#ffe0a5)}.stat:nth-child(4n+4){background:linear-gradient(140deg,#ffe5e8,#ffcdd4)}
+.stat strong{font-size:28px;color:#0a2b50}.stat span{font-weight:700;color:#435b76}
 button{border-radius:14px;transition:transform .12s ease,box-shadow .12s ease}button:active{transform:scale(.98)}
-.primary{background:linear-gradient(135deg,#0b2b50,#1769e8);color:white;box-shadow:0 6px 15px #1769e826}.secondary{background:#e9f1ff;color:#103c75;border:1px solid #d9e7ff}
-.success,.present{background:#e1f7ed;color:#08754e}.danger,.absent{background:#fff0f0;color:#b52e3b}.excused{background:#fff4dc;color:#9a6200}
-.field input,.field select{border:1px solid #d9e3ef;border-radius:13px;padding:13px;background:#fbfdff;box-shadow:inset 0 1px 2px #0d274008}
-.field input:focus,.field select:focus{outline:2px solid #91baff;border-color:#4b8df3}
-.nav{background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-top:1px solid #e2eaf4;box-shadow:0 -8px 25px #102a430a;padding:9px 6px calc(9px + env(safe-area-inset-bottom))}
-.nav button{border-radius:13px;font-weight:700}.nav button.active{background:linear-gradient(135deg,#eaf2ff,#dceaff);color:#0b3b78}
-.player{gap:8px}.avatar{border-radius:14px;background:linear-gradient(145deg,#e6efff,#d6e6ff);color:#103c75}.statusbtn{min-width:61px;border-radius:11px;padding:9px 7px}
-.pill{background:#e7effb;color:#123d70;font-weight:750}.notice{border-radius:15px}.login{margin:18px auto}.loginlogo{padding:22px 0 16px}.loginlogo .ball{border-radius:23px;box-shadow:0 10px 24px #0a2b4c25}.loginlogo h1{color:#092747;letter-spacing:-.3px}
-.reportrow{padding:12px 0}.toast{border:1px solid #ffffff24}
+.primary{background:linear-gradient(135deg,#0b2b50,#1769e8);color:white;box-shadow:0 6px 15px #1769e830}
+.secondary{background:linear-gradient(135deg,#e7f0ff,#d7e7ff);color:#123d70;border:1px solid #c7dcff}
+.danger{background:#ffe5e7;color:#b82032}.success{background:#d8f7e9;color:#08734d}
+.field input,.field select{border:1px solid #d5e2f1;border-radius:13px;padding:13px;background:#fafdff;color:var(--ink)}
+.field input:focus,.field select:focus{outline:2px solid #8ab8ff;border-color:#4c8cf2}
+.nav{background:linear-gradient(180deg,#fff,#edf4ff);border-top:1px solid #dce7f5;box-shadow:0 -8px 26px #102a4312;backdrop-filter:blur(16px);padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
+.nav button{flex:1;max-width:150px;background:#eaf0f8;color:#65758b;font-size:12px;padding:9px 3px;border:1px solid transparent;border-radius:15px;font-weight:800}
+.nav button:nth-child(1){background:#e9f1ff}.nav button:nth-child(2){background:#e1f7eb;color:#137b53}.nav button:nth-child(3){background:#fff0d8;color:#996000}.nav button:nth-child(4){background:#eee8ff;color:#6242b5}.nav button:nth-child(5){background:#e5f6fa;color:#08778a}
+.nav button.active{background:linear-gradient(135deg,#0b2b50,#1769e8);color:#fff;box-shadow:0 5px 12px #1769e833}
+.player{gap:7px;background:#f7faff;border:1px solid #e9eff8;border-radius:15px;padding:10px;margin:8px 0}
+.avatar{border-radius:13px;background:linear-gradient(145deg,#dceaff,#b9d5ff);color:#103c75}
+.statusbtn{min-width:59px;border-radius:11px;padding:9px 7px;font-weight:800}
+.present{background:linear-gradient(135deg,#d9f8e9,#b7efd5);color:#087348;border:1px solid #a5e7c6}
+.absent{background:linear-gradient(135deg,#ffe5e7,#ffcbd0);color:#b71f32;border:1px solid #ffb7bf}
+.excused{background:linear-gradient(135deg,#fff3d8,#ffe3a8);color:#8c5900;border:1px solid #f5d58c}
+.pill{background:#e3edff;color:#113e78;font-weight:800}
+.notice{border-radius:15px}.reportrow{padding:12px 8px;border-radius:12px}.reportrow:nth-child(even){background:#f4f8ff}
+.loginlogo .ball{border-radius:23px;box-shadow:0 10px 24px #0a2b4c25}.loginlogo h1{color:#092747}
+.toast{border:1px solid #ffffff24}
 @media(min-width:600px){.wrap{padding-top:22px}}
 
 </style>
@@ -72,7 +85,25 @@ function addPlayer(){let name=document.getElementById('playerName').value.trim()
 function addCoach(){let name=document.getElementById('coachName').value.trim(),phone=document.getElementById('coachPhone').value.trim(),password=document.getElementById('coachPassword').value.trim(),teamId=document.getElementById('coachTeam').value;if(!name||!phone||password.length<4||!teamId)return toast('كمّل بيانات الكابتن');if(db.coaches.some(c=>c.phone===phone)||phone===db.manager.phone)return toast('رقم الموبايل مستخدم بالفعل');let c={id:id(),name,phone,password,teamId};db.coaches.push(c);let t=teamById(teamId);if(t)t.coachId=c.id;saveDB();render();toast('تم إنشاء حساب الكابتن')}
 function deleteCoach(cid){if(!confirm('تحذف حساب الكابتن؟'))return;db.coaches=db.coaches.filter(c=>c.id!==cid);db.teams.forEach(t=>{if(t.coachId===cid)t.coachId=''});saveDB();render()}
 function reportsPage(teams,isManager){let players=isManager?db.players:db.players.filter(p=>p.teamId===coach()?.teamId);let total=0;let rows=players.map(p=>{let entries=Object.entries(db.attendance).filter(([k,v])=>k.endsWith('_'+p.id));let pr=entries.filter(([k,v])=>v.status==='present').length,ab=entries.filter(([k,v])=>v.status==='absent').length,ex=entries.filter(([k,v])=>v.status==='excused').length;total+=entries.length;return `<div class="reportrow"><div><strong>${esc(p.name)}</strong><div class="small muted">${esc(teamById(p.teamId)?.name||'')}</div><div class="small">حاضر ${pr} · غائب ${ab} · معتذر ${ex}</div></div><strong>${entries.length?Math.round(pr/entries.length*100):0}%</strong></div>`});return `<div class="card"><h2>تقارير الحضور</h2><div class="grid"><div class="stat"><strong>${players.length}</strong><span>لاعب</span></div><div class="stat"><strong>${total}</strong><span>سجلات حالات</span></div></div>${rows.join('')||'<div class="empty">لا توجد بيانات بعد</div>'}<button class="primary" style="width:100%;margin-top:12px" onclick="exportCSV()">تصدير تقرير Excel (.xlsx)</button></div>`}
-function settingsPage(){return `<div class="card"><h2>الإعدادات والنسخ الاحتياطي</h2><p class="muted">احفظ نسخة احتياطية من بيانات التجربة، أو استرجع نسخة محفوظة قبل كده.</p><button class="primary" style="width:100%" onclick="backup()">تنزيل نسخة احتياطية</button><div class="field"><label>استرجاع نسخة JSON</label><input type="file" id="restoreFile" accept=".json,application/json" style="display:block;width:100%;padding:12px;border:1px solid #d8e0e8;border-radius:13px;background:#fbfdff;color:var(--ink)" onchange="document.getElementById('restoreName').textContent=this.files && this.files[0] ? this.files[0].name : 'لم يتم اختيار ملف'"><div id="restoreName" class="small muted" style="margin-top:6px">لم يتم اختيار ملف</div></div><button class="secondary" style="width:100%" onclick="restore()">استرجاع البيانات</button><button class="danger" style="width:100%;margin-top:10px" onclick="resetDemo()">إعادة بيانات التجربة الافتراضية</button><div class="notice" style="margin-top:14px">النسخة الحالية تعمل بدون إنترنت بعد فتحها، لكن كل جهاز له بياناته. النسخة النهائية تحتاج خادمًا آمنًا لتزامن الحضور بين المدير والكباتن.</div><p class="foot">Handball Academy Manager · إصدار تجريبي 2</p></div>`}
+function settingsPage(){let account=session.role==='manager'?db.manager:coach();return `<div class="card"><h2>👤 الحساب وبيانات الدخول</h2><p class="muted small">عدّل بيانات الحساب على هذا الجهاز. هذه نسخة تجريبية وليست تسجيل دخول سحابيًا.</p><div class="field"><label>الاسم الظاهر</label><input id="accountName" value="${esc(session.name||'')}" placeholder="اسم المدير أو الكابتن"></div><div class="field"><label>رقم الموبايل لتسجيل الدخول</label><input id="accountPhone" inputmode="tel" value="${esc(account?.phone||'')}" placeholder="رقم الموبايل"></div><div class="field"><label>كلمة مرور جديدة (اتركها فارغة للاحتفاظ بالحالية)</label><input id="accountPassword" type="password" placeholder="كلمة مرور جديدة"></div><button class="primary" style="width:100%" onclick="saveAccountSettings()">💾 حفظ بيانات الحساب</button></div><div class="card"><h2>📦 النسخ الاحتياطي والاسترجاع</h2><p class="muted small">نزّل نسخة احتياطية من الفرق واللاعبين والحضور، أو اختر ملف JSON لاسترجاع البيانات.</p><button class="primary" style="width:100%" onclick="backup()">⬇️ تنزيل نسخة احتياطية</button><div class="field"><label>اختيار ملف النسخة الاحتياطية (.json)</label><input type="file" id="restoreFile" accept=".json,application/json" style="display:block;width:100%;padding:12px;border:1px solid #d5e2f1;border-radius:13px;background:#fafdff" onchange="document.getElementById('restoreName').textContent=(this.files && this.files[0]) ? this.files[0].name : 'لم يتم اختيار ملف'"><div id="restoreName" class="small muted" style="margin-top:6px">لم يتم اختيار ملف</div></div><button class="secondary" style="width:100%" onclick="restore()">📂 استرجاع البيانات</button><button class="danger" style="width:100%;margin-top:12px" onclick="resetDemo()">إعادة بيانات التجربة الافتراضية</button><div class="notice" style="margin-top:14px">مهم: بيانات الحساب محفوظة محليًا على هذا الجهاز فقط. قبل نشر التطبيق على Google Play، نحتاج تسجيل دخول آمنًا وخادمًا لمزامنة بيانات المدير والكباتن.</div><p class="foot">Handball Academy Manager · إصدار تجريبي</p></div>`}
+
+function saveAccountSettings(){
+  const name=document.getElementById('accountName')?.value.trim()||'';
+  const phone=document.getElementById('accountPhone')?.value.trim()||'';
+  const password=document.getElementById('accountPassword')?.value||'';
+  if(!name||!phone)return toast('اكتب الاسم ورقم الموبايل');
+  if(password && password.length<4)return toast('كلمة المرور لازم تكون 4 أحرف أو أرقام على الأقل');
+  if(session.role==='manager'){
+    if(phone!==db.manager.phone && db.coaches.some(c=>c.phone===phone))return toast('رقم الموبايل مستخدم لحساب كابتن');
+    db.manager.phone=phone;if(password)db.manager.password=password;session.name=name;
+  }else{
+    const c=db.coaches.find(x=>x.id===session.id);if(!c)return toast('تعذر العثور على الحساب');
+    if(phone!==c.phone && (db.coaches.some(x=>x.id!==c.id&&x.phone===phone)||phone===db.manager.phone))return toast('رقم الموبايل مستخدم بالفعل');
+    c.name=name;c.phone=phone;if(password)c.password=password;session.name=name;session.phone=phone;
+  }
+  localStorage.setItem(SESSION,JSON.stringify(session));saveDB();render();toast('تم حفظ بيانات الحساب');
+}
+
 function backup(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});download(blob,'handball-backup.json')}
 function restore(){let f=document.getElementById('restoreFile').files[0];if(!f)return toast('اختار ملف النسخة الاحتياطية');let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.teams||!x.players||!x.attendance)throw 0;db=x;saveDB();render();toast('تم استرجاع النسخة')}catch(e){toast('الملف غير صالح')}};r.readAsText(f)}
 function resetDemo(){if(!confirm('ده هيرجع بيانات التجربة الافتراضية ويمسح التعديلات الحالية على الجهاز. تكمل؟'))return;db=JSON.parse(JSON.stringify(initial));saveDB();render();toast('تمت إعادة البيانات')}
@@ -85,9 +116,8 @@ function exportCSV(){
   if (selectedMonth && !/^\d{4}-\d{2}$/.test(selectedMonth)) return toast('اكتب الشهر بالشكل 2026-10');
   const records=[];
   Object.entries(db.attendance || {}).forEach(([key,v])=>{
-    // Player IDs can contain underscores; match the full ID at the end of the key.
-    const player=allowedPlayers.find(x=>key.endsWith('_'+x.id)); if(!player) return;
-    const date=key.slice(0,key.length-player.id.length-1);
+    const parts=key.split('_'), pid=parts.pop(), date=parts.join('_');
+    const player=allowedPlayers.find(x=>x.id===pid); if(!player) return;
     const month=String(date).slice(0,7); if(selectedMonth && month!==selectedMonth) return;
     records.push({player,team:teamById(player.teamId)?.name||'بدون فريق',date,month,status:v.status});
   });
