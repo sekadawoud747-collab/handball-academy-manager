@@ -1,3 +1,4 @@
+
 package com.handballacademy.manager;
 
 import android.app.Activity;
@@ -6,7 +7,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
-import android.view.View;
 import android.graphics.Color;
 import android.widget.Toast;
 
@@ -19,7 +19,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         webView = new WebView(this);
-
         webView.setBackgroundColor(Color.WHITE);
 
         WebSettings settings = webView.getSettings();
@@ -35,7 +34,6 @@ public class MainActivity extends Activity {
                     int errorCode,
                     String description,
                     String failingUrl) {
-
                 Toast.makeText(
                     MainActivity.this,
                     "خطأ في فتح التطبيق: " + description,
@@ -45,11 +43,11 @@ public class MainActivity extends Activity {
         });
 
         webView.setWebChromeClient(new WebChromeClient());
-
         setContentView(webView);
 
+        Toast.makeText(this, "جاري فتح واجهة التطبيق", Toast.LENGTH_SHORT).show();
         webView.loadUrl("file:///android_asset/index.html");
-Toast.makeText(this, "جاري فتح واجهة التطبيق", Toast.LENGTH_LONG).show();
+    }
 
     @Override
     public void onBackPressed() {
