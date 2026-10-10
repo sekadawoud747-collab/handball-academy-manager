@@ -52,38 +52,4 @@ function reportsPage(teams,isManager){let players=isManager?db.players:db.player
 function settingsPage(){return `<div class="card"><h2>الإعدادات والنسخ الاحتياطي</h2><p class="muted">احفظ نسخة احتياطية من بيانات التجربة، أو استرجع نسخة محفوظة قبل كده.</p><button class="primary" style="width:100%" onclick="backup()">تنزيل نسخة احتياطية</button><div class="field"><label>استرجاع نسخة JSON</label><input type="file" id="restoreFile" accept=".json,application/json"></div><button class="secondary" style="width:100%" onclick="restore()">استرجاع البيانات</button><button class="danger" style="width:100%;margin-top:10px" onclick="resetDemo()">إعادة بيانات التجربة الافتراضية</button><div class="notice" style="margin-top:14px">النسخة الحالية تعمل بدون إنترنت بعد فتحها، لكن كل جهاز له بياناته. النسخة النهائية تحتاج خادمًا آمنًا لتزامن الحضور بين المدير والكباتن.</div><p class="foot">Handball Academy Manager · إصدار تجريبي 2</p></div>`}
 function backup(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});download(blob,'handball-backup.json')}
 function restore(){let f=document.getElementById('restoreFile').files[0];if(!f)return toast('اختار ملف النسخة الاحتياطية');let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.teams||!x.players||!x.attendance)throw 0;db=x;saveDB();render();toast('تم استرجاع النسخة')}catch(e){toast('الملف غير صالح')}};r.readAsText(f)}
-function resetDemo(){
-  if(!confirm('ده هيرجع بيانات التجربة الافتراضية ويمسح التعديلات الحالية على الجهاز. تكمل؟')) return;
-  db=JSON.parse(JSON.stringify(initial));
-  saveDB();
-  render();
-  toast('تمت إعادة بيانات التجربة');
-}
-
-function exportCSV(){
-  const rows=[['اسم اللاعب','الفريق','حاضر','غائب','معتذر']];
-  db.players.forEach(p=>{
-    const entries=Object.entries(db.attendance)
-      .filter(([k])=>k.endsWith('_'+p.id));
-    rows.push([
-      p.name,
-      teamById(p.teamId)?.name||'',
-      entries.filter(([,v])=>v.status==='present').length,
-      entries.filter(([,v])=>v.status==='absent').length,
-      entries.filter(([,v])=>v.status==='excused').length
-    ]);
-  });
-  const csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
-  download(new Blob([csv],{type:'text/csv;charset=utf-8;'}),'handball-report.csv');
-}
-
-function download(blob,filename){
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  a.href=url;
-  a.download=filename;
-  a.click();
-  setTimeout(()=>URL.revokeObjectURL(url),1000);
-}
-
-render();
+function resetDemo(){if(!confirm('ده هيرجع بيانات التجربة الافتراضية ويمسح التعديلات الحالية على الجهاز. تكمل؟'))return;db=JSON.parse(JSON.stringify(initial));saveDB();render();to
