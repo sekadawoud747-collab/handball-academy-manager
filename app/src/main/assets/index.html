@@ -5,46 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#102a43">
 <title>Handball Academy Manager</title>
-<link rel="icon" type="image/png" href="icon.png">
 
 <style>
 :root{--navy:#102a43;--blue:#1f6feb;--pale:#eaf2f8;--bg:#f3f6fa;--ink:#142333;--muted:#64748b;--green:#16845b;--red:#c0392b;--amber:#a96500}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 14px;font-weight:700}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:var(--navy);color:white}.secondary{background:var(--pale);color:var(--navy)}.danger{background:#feeceb;color:var(--red)}.success{background:#e4f6ee;color:var(--green)}.muted{color:var(--muted)}.small{font-size:12px}.appbar{background:var(--navy);color:white;padding:18px 16px 24px;border-radius:0 0 24px 24px}.brand{display:flex;align-items:center;gap:12px}.ball{width:52px;height:52px;flex-shrink:0;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--navy);font-size:30px;overflow:hidden}.ball.logo-ball img{width:100%;height:100%;object-fit:cover;border-radius:inherit}.appbar h1{font-size:18px;margin:0}.appbar p{font-size:12px;margin:4px 0 0;color:#d6e4f0}.appbar .topline{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:13px}.wrap{max-width:760px;margin:auto;padding:14px 14px 90px}.card{background:white;border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 4px 18px #102a430c}.card h2{font-size:17px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{background:#f7f9fc;border:1px solid #edf1f5;border-radius:14px;padding:14px}.stat strong{display:block;font-size:25px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field label{font-size:13px;font-weight:700}.field input,.field select{width:100%;padding:12px;border:1px solid #d8e0e8;border-radius:11px;background:white;color:var(--ink)}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5eaf0;display:flex;justify-content:center;gap:4px;padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:5}.nav button{flex:1;max-width:150px;background:transparent;color:var(--muted);font-size:12px;padding:8px 3px}.nav button.active{background:var(--pale);color:var(--navy)}.player{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #edf1f5}.player:last-child{border-bottom:0}.avatar{width:38px;height:38px;border-radius:12px;background:var(--pale);display:grid;place-items:center;font-weight:800;color:var(--navy)}.playerinfo{flex:1;min-width:0}.playerinfo strong{display:block;font-size:14px}.playerinfo small{color:var(--muted)}.statusbtn{padding:8px 9px;font-size:12px;min-width:67px}.present{background:#e3f6ed;color:var(--green)}.absent{background:#ffebea;color:var(--red)}.excused{background:#fff2d9;color:var(--amber)}.pill{display:inline-block;border-radius:20px;padding:5px 9px;background:#edf2f7;font-size:11px;color:var(--navy)}.empty{text-align:center;padding:26px 10px;color:var(--muted)}.hidden{display:none!important}.notice{background:#fff5d9;border:1px solid #f5df9d;color:#795000;padding:11px 12px;border-radius:12px;font-size:12px;line-height:1.6}.login{max-width:430px;margin:28px auto;padding:0 16px}.login .card{padding:22px}.loginlogo{text-align:center;padding:18px 0}.loginlogo .ball{margin:0 auto 10px;width:72px;height:72px;font-size:42px}.loginlogo h1{font-size:21px;margin:0}.loginlogo p{margin:5px;color:var(--muted);font-size:13px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px}.sectionhead h2{margin:0}.reportrow{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #edf1f5;font-size:13px}.reportrow:last-child{border:0}.toast{position:fixed;top:12px;left:12px;right:12px;z-index:20;background:#142333;color:white;border-radius:12px;padding:13px;text-align:center;box-shadow:0 8px 30px #0002}.foot{text-align:center;color:var(--muted);font-size:11px;margin-top:20px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 14px;font-weight:700}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:var(--navy);color:white}.secondary{background:var(--pale);color:var(--navy)}.danger{background:#feeceb;color:var(--red)}.success{background:#e4f6ee;color:var(--green)}.muted{color:var(--muted)}.small{font-size:12px}.appbar{background:var(--navy);color:white;padding:18px 16px 24px;border-radius:0 0 24px 24px}.brand{display:flex;align-items:center;gap:12px}.ball{width:52px;height:52px;flex-shrink:0;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--navy);font-size:30px}.appbar h1{font-size:18px;margin:0}.appbar p{font-size:12px;margin:4px 0 0;color:#d6e4f0}.appbar .topline{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:13px}.wrap{max-width:760px;margin:auto;padding:14px 14px 90px}.card{background:white;border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 4px 18px #102a430c}.card h2{font-size:17px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{background:#f7f9fc;border:1px solid #edf1f5;border-radius:14px;padding:14px}.stat strong{display:block;font-size:25px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field label{font-size:13px;font-weight:700}.field input,.field select{width:100%;padding:12px;border:1px solid #d8e0e8;border-radius:11px;background:white;color:var(--ink)}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5eaf0;display:flex;justify-content:center;gap:4px;padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:5}.nav button{flex:1;max-width:150px;background:transparent;color:var(--muted);font-size:12px;padding:8px 3px}.nav button.active{background:var(--pale);color:var(--navy)}.player{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #edf1f5}.player:last-child{border-bottom:0}.avatar{width:38px;height:38px;border-radius:12px;background:var(--pale);display:grid;place-items:center;font-weight:800;color:var(--navy)}.playerinfo{flex:1;min-width:0}.playerinfo strong{display:block;font-size:14px}.playerinfo small{color:var(--muted)}.statusbtn{padding:8px 9px;font-size:12px;min-width:67px}.present{background:#e3f6ed;color:var(--green)}.absent{background:#ffebea;color:var(--red)}.excused{background:#fff2d9;color:var(--amber)}.pill{display:inline-block;border-radius:20px;padding:5px 9px;background:#edf2f7;font-size:11px;color:var(--navy)}.empty{text-align:center;padding:26px 10px;color:var(--muted)}.hidden{display:none!important}.notice{background:#fff5d9;border:1px solid #f5df9d;color:#795000;padding:11px 12px;border-radius:12px;font-size:12px;line-height:1.6}.login{max-width:430px;margin:28px auto;padding:0 16px}.login .card{padding:22px}.loginlogo{text-align:center;padding:18px 0}.loginlogo .ball{margin:0 auto 10px;width:72px;height:72px;font-size:42px}.loginlogo h1{font-size:21px;margin:0}.loginlogo p{margin:5px;color:var(--muted);font-size:13px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px}.sectionhead h2{margin:0}.reportrow{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #edf1f5;font-size:13px}.reportrow:last-child{border:0}.toast{position:fixed;top:12px;left:12px;right:12px;z-index:20;background:#142333;color:white;border-radius:12px;padding:13px;text-align:center;box-shadow:0 8px 30px #0002}.foot{text-align:center;color:var(--muted);font-size:11px;margin-top:20px}
 @media(min-width:600px){.wrap{padding-top:22px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.appbar{padding-left:max(20px,calc((100% - 730px)/2));padding-right:max(20px,calc((100% - 730px)/2))}}
 
-/* Colorful academy theme */
-:root{--navy:#081d35;--blue:#1769e8;--pale:#e5efff;--bg:#eaf0f8;--ink:#10243d;--muted:#60738b;--green:#12845b;--red:#c73545;--amber:#a96500}
-body{background:radial-gradient(circle at 8% 15%,#c8e2ff 0,transparent 30%),radial-gradient(circle at 95% 40%,#d9d2ff 0,transparent 25%),linear-gradient(160deg,#e9f2ff,#f1f4fb 50%,#e6f8f2);color:var(--ink)}
-.appbar{background:linear-gradient(130deg,#06172c 0%,#103d76 52%,#1769e8 100%);box-shadow:0 12px 28px #0b2a4c30;border-radius:0 0 30px 30px;position:relative;overflow:hidden}
-.appbar:after{content:"";position:absolute;left:-42px;bottom:-100px;width:240px;height:240px;border:2px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 20px #ffffff0a,0 0 0 45px #ffffff08;pointer-events:none}
-.brand,.topline{position:relative;z-index:1}.ball{box-shadow:0 5px 18px #0003;border:2px solid #ffffff80}
-.wrap{padding-bottom:108px}
-.card{background:linear-gradient(145deg,#fff 0%,#f5f8ff 100%);border:1px solid #dfe9f7;border-radius:22px;box-shadow:0 8px 24px #12365b12,0 2px 6px #12365b08}
-.card h2{color:#102f55}.grid{gap:11px}
-.stat{position:relative;overflow:hidden;border:0;border-radius:19px;padding:15px;background:linear-gradient(145deg,#fff,#e7f0ff);box-shadow:0 7px 17px #16365a12}
-.stat:nth-child(4n+1){background:linear-gradient(140deg,#e2efff,#c9e0ff)}.stat:nth-child(4n+2){background:linear-gradient(140deg,#def8ec,#c5f0dd)}.stat:nth-child(4n+3){background:linear-gradient(140deg,#fff0d5,#ffe0a5)}.stat:nth-child(4n+4){background:linear-gradient(140deg,#ffe5e8,#ffcdd4)}
-.stat strong{font-size:28px;color:#0a2b50}.stat span{font-weight:700;color:#435b76}
-button{border-radius:14px;transition:transform .12s ease,box-shadow .12s ease}button:active{transform:scale(.98)}
-.primary{background:linear-gradient(135deg,#0b2b50,#1769e8);color:white;box-shadow:0 6px 15px #1769e830}
-.secondary{background:linear-gradient(135deg,#e7f0ff,#d7e7ff);color:#123d70;border:1px solid #c7dcff}
-.danger{background:#ffe5e7;color:#b82032}.success{background:#d8f7e9;color:#08734d}
+/* Handball Academy visual refresh */
+:root{--navy:#071b34;--blue:#1769e8;--pale:#e5efff;--bg:#eaf1fb;--ink:#10243d;--muted:#647b96;--green:#13a66b;--red:#d6384a;--amber:#f0a22b}
+*{ -webkit-tap-highlight-color:transparent}
+body{background:radial-gradient(ellipse at 12% 4%,#c6e0ff 0,transparent 32%),radial-gradient(ellipse at 92% 35%,#d4d0ff 0,transparent 27%),linear-gradient(155deg,#eaf3ff,#f4f7fc 56%,#e1f8ef);color:var(--ink)}
+.appbar{background:linear-gradient(125deg,#06162b 0%,#0c3970 56%,#1769e8 100%);box-shadow:0 14px 32px #071b3433;border-radius:0 0 30px 30px;position:relative;overflow:hidden}
+.appbar:before{content:"";position:absolute;right:-55px;top:-125px;width:260px;height:260px;border:1px solid #ffffff24;border-radius:50%;box-shadow:0 0 0 24px #ffffff08,0 0 0 52px #ffffff06}
+.appbar:after{content:"";position:absolute;left:-50px;bottom:-130px;width:230px;height:230px;border:2px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 22px #ffffff08,0 0 0 48px #ffffff05;pointer-events:none}
+.brand,.topline{position:relative;z-index:1}
+.ball{box-shadow:0 7px 18px #0003;border:2px solid #ffffff8a}
+.ball.logo-ball{background:#0a2b50}
+.ball.logo-ball img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.wrap{padding-bottom:110px}
+.card{background:linear-gradient(145deg,#fff 0%,#f3f7ff 100%);border:1px solid #dce8f8;border-radius:22px;box-shadow:0 8px 24px #12365b12,0 2px 6px #12365b08}
+.card h2{color:#102f55}
+.grid{gap:11px}
+.stat{position:relative;overflow:hidden;border:1px solid #ffffffa8;border-radius:19px;padding:15px;background:linear-gradient(140deg,#dceaff,#c4dcff);box-shadow:0 7px 17px #16365a12}
+.stat:nth-child(4n+2){background:linear-gradient(140deg,#d9f8e9,#b9efd6)}
+.stat:nth-child(4n+3){background:linear-gradient(140deg,#fff0d3,#ffdfa0)}
+.stat:nth-child(4n+4){background:linear-gradient(140deg,#ffe5e8,#ffcbd2)}
+.stat strong{font-size:28px;color:#092b50}.stat span{font-weight:750;color:#405b78}
+button{border-radius:14px;transition:transform .12s ease,filter .12s ease;box-shadow:0 3px 8px #102a4308}
+button:active{transform:scale(.98);filter:brightness(.98)}
+.primary{background:linear-gradient(135deg,#0a2b50,#1769e8);color:#fff;box-shadow:0 7px 16px #1769e83b}
+.secondary{background:linear-gradient(135deg,#e8f1ff,#d6e6ff);color:#123d70;border:1px solid #c7dcff}
+.danger{background:linear-gradient(135deg,#ffe7e9,#ffd0d5);color:#b82032}
+.success{background:linear-gradient(135deg,#ddf9eb,#b9efd5);color:#08734d}
 .field input,.field select{border:1px solid #d5e2f1;border-radius:13px;padding:13px;background:#fafdff;color:var(--ink)}
 .field input:focus,.field select:focus{outline:2px solid #8ab8ff;border-color:#4c8cf2}
-.nav{background:linear-gradient(180deg,#fff,#edf4ff);border-top:1px solid #dce7f5;box-shadow:0 -8px 26px #102a4312;backdrop-filter:blur(16px);padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
+.nav{background:linear-gradient(180deg,#fff,#edf4ff);border-top:1px solid #dce7f5;box-shadow:0 -8px 26px #102a4315;backdrop-filter:blur(16px);padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
 .nav button{flex:1;max-width:150px;background:#eaf0f8;color:#65758b;font-size:12px;padding:9px 3px;border:1px solid transparent;border-radius:15px;font-weight:800}
-.nav button:nth-child(1){background:#e9f1ff}.nav button:nth-child(2){background:#e1f7eb;color:#137b53}.nav button:nth-child(3){background:#fff0d8;color:#996000}.nav button:nth-child(4){background:#eee8ff;color:#6242b5}.nav button:nth-child(5){background:#e5f6fa;color:#08778a}
-.nav button.active{background:linear-gradient(135deg,#0b2b50,#1769e8);color:#fff;box-shadow:0 5px 12px #1769e833}
-.player{gap:7px;background:#f7faff;border:1px solid #e9eff8;border-radius:15px;padding:10px;margin:8px 0}
+.nav button:nth-child(1){background:#e5efff;color:#2456a3}
+.nav button:nth-child(2){background:#dcf8e9;color:#137b53}
+.nav button:nth-child(3){background:#fff0d8;color:#996000}
+.nav button:nth-child(4){background:#eee8ff;color:#6242b5}
+.nav button:nth-child(5){background:#e1f6fa;color:#08778a}
+.nav button.active{background:linear-gradient(135deg,#0b2b50,#1769e8);color:#fff;box-shadow:0 5px 12px #1769e83b}
+.player{gap:7px;background:#f7faff;border:1px solid #e5edf8;border-radius:15px;padding:10px;margin:8px 0}
 .avatar{border-radius:13px;background:linear-gradient(145deg,#dceaff,#b9d5ff);color:#103c75}
-.statusbtn{min-width:59px;border-radius:11px;padding:9px 7px;font-weight:800}
+.statusbtn{min-width:58px;border-radius:11px;padding:9px 7px;font-weight:850}
 .present{background:linear-gradient(135deg,#d9f8e9,#b7efd5);color:#087348;border:1px solid #a5e7c6}
 .absent{background:linear-gradient(135deg,#ffe5e7,#ffcbd0);color:#b71f32;border:1px solid #ffb7bf}
 .excused{background:linear-gradient(135deg,#fff3d8,#ffe3a8);color:#8c5900;border:1px solid #f5d58c}
 .pill{background:#e3edff;color:#113e78;font-weight:800}
-.notice{border-radius:15px}.reportrow{padding:12px 8px;border-radius:12px}.reportrow:nth-child(even){background:#f4f8ff}
-.loginlogo .ball{border-radius:23px;box-shadow:0 10px 24px #0a2b4c25}.loginlogo h1{color:#092747}
-.toast{border:1px solid #ffffff24}
-@media(min-width:600px){.wrap{padding-top:22px}}
+.notice{border-radius:15px}
+.reportrow{padding:12px 8px;border-radius:12px}
+.reportrow:nth-child(even){background:#f0f6ff}
+/* Illustrated, dark sports login */
+body:has(.login){background:radial-gradient(ellipse at 50% 0%,#1b5eb1 0%,#0b2b50 36%,#061426 78%);min-height:100vh}
+.login{max-width:460px;margin:0 auto;padding:24px 17px 36px;position:relative}
+.login:before{content:"";position:fixed;top:-110px;left:-120px;width:330px;height:330px;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 0 24px #ffffff05,0 0 0 50px #ffffff04;pointer-events:none}
+.loginlogo{position:relative;text-align:center;padding:20px 8px 23px;color:#fff}
+.loginlogo .ball{margin:0 auto 13px;width:100px;height:100px;font-size:42px;border-radius:29px;border:2px solid #ffffff8c;box-shadow:0 14px 35px #0005,0 0 0 9px #ffffff0b}
+.loginlogo h1{font-size:22px;letter-spacing:.1px;color:#fff;margin:0;font-weight:900}
+.loginlogo p{margin:7px 0 0;color:#d0e5ff;font-size:13px}
+.login .card{position:relative;background:linear-gradient(155deg,#102e50f5,#0a2039f5);border:1px solid #ffffff25;border-radius:25px;padding:22px;box-shadow:0 18px 45px #0004;color:#fff}
+.login .card h2{color:#fff;font-size:19px;margin-bottom:17px}
+.login .field label{color:#d9e9fc}
+.login .field input,.login .field select{background:#f0f6ff;border:1px solid #bad2f3;color:#0c2745;border-radius:13px}
+.login .primary{width:100%;padding:14px;background:linear-gradient(110deg,#1a75ff,#1557c8);font-size:16px}
+.login .secondary{width:100%;margin-top:9px;background:#d9f8e9;color:#08734d;border:0}
+.login .notice{background:#17395b;border:1px solid #315b82;color:#d8e9ff}
+.login .small.muted{color:#c3d7ee;line-height:1.9}
+.foot{color:var(--muted)}
+@media(min-width:600px){.wrap{padding-top:22px}.login{padding-top:35px}}
 
 </style>
 </head>
@@ -67,9 +97,9 @@ function visiblePlayers(tid){return db.players.filter(p=>p.teamId===tid)}
 function toast(msg){let el=document.getElementById('toast');el.textContent=msg;el.classList.remove('hidden');setTimeout(()=>el.classList.add('hidden'),2300)}
 function login(phone,password,role){let found=role==='manager'?(phone===db.manager.phone&&password===db.manager.password?{id:'manager',name:'المدير',role:'manager'}:null):db.coaches.find(c=>c.phone===phone&&c.password===password)?{...db.coaches.find(c=>c.phone===phone&&c.password===password),role:'coach'}:null;if(!found){toast('رقم الموبايل أو كلمة المرور غير صحيحة');return}session=found;localStorage.setItem(SESSION,JSON.stringify(session));tab='home';render()}
 function logout(){session=null;localStorage.removeItem(SESSION);render()}
-function render(){const root=document.getElementById('app');if(!session){root.innerHTML=`<div class="login"><div class="loginlogo"><div class="ball logo-ball"><img src="icon.png" alt="Handball Academy Manager"></div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد والحضور</p></div><div class="card"><h2>تسجيل الدخول</h2><div class="field"><label>نوع الحساب</label><select id="role"><option value="manager">مدير الأكاديمية</option><option value="coach">كابتن الفريق</option></select></div><div class="field"><label>رقم الموبايل</label><input id="phone" inputmode="tel" placeholder="اكتب رقم الموبايل"></div><div class="field"><label>كلمة المرور</label><input id="password" type="password" placeholder="كلمة المرور"></div><button class="primary" style="width:100%" onclick="login(document.getElementById('phone').value,document.getElementById('password').value,document.getElementById('role').value)">دخول</button><button class="secondary" style="width:100%;margin-top:8px" onclick="demoLogin()">دخول سريع للتجربة</button><div class="notice" style="margin-top:14px">نسخة تطوير تجريبية تحفظ البيانات على نفس الجهاز فقط. المزامنة بين أجهزة مختلفة تحتاج ربط خادم آمن.</div><p class="small muted">حساب المدير التجريبي: 01000000000 / 1234<br>الكابتن أحمد: 01000000001 / 1234<br>الكابتن منى: 01000000002 / 1234</p></div></div>`;return}
+function render(){const root=document.getElementById('app');if(!session){root.innerHTML=`<div class="login"><div class="loginlogo"><div class="ball">🤾</div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد والحضور</p></div><div class="card"><h2>تسجيل الدخول</h2><div class="field"><label>نوع الحساب</label><select id="role"><option value="manager">مدير الأكاديمية</option><option value="coach">كابتن الفريق</option></select></div><div class="field"><label>رقم الموبايل</label><input id="phone" inputmode="tel" placeholder="اكتب رقم الموبايل"></div><div class="field"><label>كلمة المرور</label><input id="password" type="password" placeholder="كلمة المرور"></div><button class="primary" style="width:100%" onclick="login(document.getElementById('phone').value,document.getElementById('password').value,document.getElementById('role').value)">دخول</button><button class="secondary" style="width:100%;margin-top:8px" onclick="demoLogin()">دخول سريع للتجربة</button><div class="notice" style="margin-top:14px">نسخة تطوير تجريبية تحفظ البيانات على نفس الجهاز فقط. المزامنة بين أجهزة مختلفة تحتاج ربط خادم آمن.</div><p class="small muted">حساب المدير التجريبي: 01000000000 / 1234<br>الكابتن أحمد: 01000000001 / 1234<br>الكابتن منى: 01000000002 / 1234</p></div></div>`;return}
 const isManager=session.role==='manager';const teams=visibleTeams();if(!chosenTeam||!teams.some(t=>t.id===chosenTeam))chosenTeam=teams[0]?.id||'';
-root.innerHTML=`<header class="appbar"><div class="brand"><div class="ball logo-ball"><img src="icon.png" alt="Handball Academy Manager"></div><div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد</p></div></div><div class="topline"><span>${esc(session.name)} · ${isManager?'مدير الأكاديمية':'كابتن الفريق'}</span><button class="secondary" style="padding:7px 10px;font-size:12px" onclick="logout()">خروج</button></div></header><main class="wrap">${tab==='home'?homePage(teams,isManager):tab==='attendance'?attendancePage(teams):tab==='teams'?teamsPage():tab==='reports'?reportsPage(teams,isManager):settingsPage()}</main><nav class="nav"><button class="${tab==='home'?'active':''}" onclick="tab='home';render()">🏠<br>الرئيسية</button><button class="${tab==='attendance'?'active':''}" onclick="tab='attendance';render()">✅<br>الحضور</button>${isManager?`<button class="${tab==='teams'?'active':''}" onclick="tab='teams';render()">👥<br>الفرق</button>`:''}<button class="${tab==='reports'?'active':''}" onclick="tab='reports';render()">📊<br>التقارير</button><button class="${tab==='settings'?'active':''}" onclick="tab='settings';render()">⚙️<br>الإعدادات</button></nav>`;
+root.innerHTML=`<header class="appbar"><div class="brand"><div class="ball">🤾</div><div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد</p></div></div><div class="topline"><span>${esc(session.name)} · ${isManager?'مدير الأكاديمية':'كابتن الفريق'}</span><button class="secondary" style="padding:7px 10px;font-size:12px" onclick="logout()">خروج</button></div></header><main class="wrap">${tab==='home'?homePage(teams,isManager):tab==='attendance'?attendancePage(teams):tab==='teams'?teamsPage():tab==='reports'?reportsPage(teams,isManager):settingsPage()}</main><nav class="nav"><button class="${tab==='home'?'active':''}" onclick="tab='home';render()">🏠<br>الرئيسية</button><button class="${tab==='attendance'?'active':''}" onclick="tab='attendance';render()">✅<br>الحضور</button>${isManager?`<button class="${tab==='teams'?'active':''}" onclick="tab='teams';render()">👥<br>الفرق</button>`:''}<button class="${tab==='reports'?'active':''}" onclick="tab='reports';render()">📊<br>التقارير</button><button class="${tab==='settings'?'active':''}" onclick="tab='settings';render()">⚙️<br>الإعدادات</button></nav>`;
 }
 function demoLogin(){session={id:'manager',name:'المدير',role:'manager'};localStorage.setItem(SESSION,JSON.stringify(session));tab='home';render()}
 function homePage(teams,isManager){let todayKey=today();let allPlayers=isManager?db.players:db.players.filter(p=>p.teamId===coach()?.teamId);let statuses=allPlayers.map(p=>db.attendance[`${todayKey}_${p.id}`]?.status);let present=statuses.filter(s=>s==='present').length,absent=statuses.filter(s=>s==='absent').length,excused=statuses.filter(s=>s==='excused').length;return `<div class="grid"><div class="stat"><strong>${teams.length}</strong><span>الفرق المسؤولة عنها</span></div><div class="stat"><strong>${allPlayers.length}</strong><span>إجمالي اللاعبين</span></div><div class="stat"><strong>${present}</strong><span>حاضر اليوم</span></div><div class="stat"><strong>${absent}</strong><span>غائب اليوم</span></div></div><div class="card"><div class="sectionhead"><h2>تسجيل الحضور</h2><span class="pill">${esc(todayKey)}</span></div><p class="muted small">اختار الفريق وسجّل حالة كل لاعب في ثواني.</p><div class="field"><label>الفريق</label><select id="homeTeam" onchange="chosenTeam=this.value;render()">${teams.map(t=>`<option value="${t.id}" ${t.id===chosenTeam?'selected':''}>${esc(t.name)}</option>`).join('')}</select></div><button class="primary" style="width:100%" onclick="tab='attendance';chosenDate=today();render()">فتح سجل الحضور</button></div><div class="card"><h2>ملخص اليوم</h2><div class="reportrow"><span>حاضر</span><strong style="color:var(--green)">${present}</strong></div><div class="reportrow"><span>غائب</span><strong style="color:var(--red)">${absent}</strong></div><div class="reportrow"><span>معتذر</span><strong style="color:var(--amber)">${excused}</strong></div><div class="reportrow"><span>لم يتم تحديد الحالة</span><strong>${statuses.filter(s=>!s).length}</strong></div></div><div class="notice">ملاحظة: دي نسخة محلية للتجربة. بياناتها موجودة على نفس الجهاز والمتصفح، وليست متزامنة بين أجهزة الكباتن حتى الآن.</div>`}
@@ -84,87 +114,35 @@ function addTeam(){let name=document.getElementById('newTeamName').value.trim();
 function addPlayer(){let name=document.getElementById('playerName').value.trim(),teamId=document.getElementById('playerTeam').value,number=document.getElementById('playerNumber').value.trim();if(!name||!teamId)return toast('اكتب اسم اللاعب واختار الفريق');db.players.push({id:id(),name,teamId,number});saveDB();render();toast('تمت إضافة اللاعب')}
 function addCoach(){let name=document.getElementById('coachName').value.trim(),phone=document.getElementById('coachPhone').value.trim(),password=document.getElementById('coachPassword').value.trim(),teamId=document.getElementById('coachTeam').value;if(!name||!phone||password.length<4||!teamId)return toast('كمّل بيانات الكابتن');if(db.coaches.some(c=>c.phone===phone)||phone===db.manager.phone)return toast('رقم الموبايل مستخدم بالفعل');let c={id:id(),name,phone,password,teamId};db.coaches.push(c);let t=teamById(teamId);if(t)t.coachId=c.id;saveDB();render();toast('تم إنشاء حساب الكابتن')}
 function deleteCoach(cid){if(!confirm('تحذف حساب الكابتن؟'))return;db.coaches=db.coaches.filter(c=>c.id!==cid);db.teams.forEach(t=>{if(t.coachId===cid)t.coachId=''});saveDB();render()}
-function reportsPage(teams,isManager){let players=isManager?db.players:db.players.filter(p=>p.teamId===coach()?.teamId);let total=0;let rows=players.map(p=>{let entries=Object.entries(db.attendance).filter(([k,v])=>k.endsWith('_'+p.id));let pr=entries.filter(([k,v])=>v.status==='present').length,ab=entries.filter(([k,v])=>v.status==='absent').length,ex=entries.filter(([k,v])=>v.status==='excused').length;total+=entries.length;return `<div class="reportrow"><div><strong>${esc(p.name)}</strong><div class="small muted">${esc(teamById(p.teamId)?.name||'')}</div><div class="small">حاضر ${pr} · غائب ${ab} · معتذر ${ex}</div></div><strong>${entries.length?Math.round(pr/entries.length*100):0}%</strong></div>`});return `<div class="card"><h2>تقارير الحضور</h2><div class="grid"><div class="stat"><strong>${players.length}</strong><span>لاعب</span></div><div class="stat"><strong>${total}</strong><span>سجلات حالات</span></div></div>${rows.join('')||'<div class="empty">لا توجد بيانات بعد</div>'}<button class="primary" style="width:100%;margin-top:12px" onclick="exportCSV()">تصدير تقرير Excel (.xlsx)</button></div>`}
-function settingsPage(){let account=session.role==='manager'?db.manager:coach();return `<div class="card"><h2>👤 الحساب وبيانات الدخول</h2><p class="muted small">عدّل بيانات الحساب على هذا الجهاز. هذه نسخة تجريبية وليست تسجيل دخول سحابيًا.</p><div class="field"><label>الاسم الظاهر</label><input id="accountName" value="${esc(session.name||'')}" placeholder="اسم المدير أو الكابتن"></div><div class="field"><label>رقم الموبايل لتسجيل الدخول</label><input id="accountPhone" inputmode="tel" value="${esc(account?.phone||'')}" placeholder="رقم الموبايل"></div><div class="field"><label>كلمة مرور جديدة (اتركها فارغة للاحتفاظ بالحالية)</label><input id="accountPassword" type="password" placeholder="كلمة مرور جديدة"></div><button class="primary" style="width:100%" onclick="saveAccountSettings()">💾 حفظ بيانات الحساب</button></div><div class="card"><h2>📦 النسخ الاحتياطي والاسترجاع</h2><p class="muted small">نزّل نسخة احتياطية من الفرق واللاعبين والحضور، أو اختر ملف JSON لاسترجاع البيانات.</p><button class="primary" style="width:100%" onclick="backup()">⬇️ تنزيل نسخة احتياطية</button><div class="field"><label>اختيار ملف النسخة الاحتياطية (.json)</label><input type="file" id="restoreFile" accept=".json,application/json" style="display:block;width:100%;padding:12px;border:1px solid #d5e2f1;border-radius:13px;background:#fafdff" onchange="document.getElementById('restoreName').textContent=(this.files && this.files[0]) ? this.files[0].name : 'لم يتم اختيار ملف'"><div id="restoreName" class="small muted" style="margin-top:6px">لم يتم اختيار ملف</div></div><button class="secondary" style="width:100%" onclick="restore()">📂 استرجاع البيانات</button><button class="danger" style="width:100%;margin-top:12px" onclick="resetDemo()">إعادة بيانات التجربة الافتراضية</button><div class="notice" style="margin-top:14px">مهم: بيانات الحساب محفوظة محليًا على هذا الجهاز فقط. قبل نشر التطبيق على Google Play، نحتاج تسجيل دخول آمنًا وخادمًا لمزامنة بيانات المدير والكباتن.</div><p class="foot">Handball Academy Manager · إصدار تجريبي</p></div>`}
-
-function saveAccountSettings(){
-  const name=document.getElementById('accountName')?.value.trim()||'';
-  const phone=document.getElementById('accountPhone')?.value.trim()||'';
-  const password=document.getElementById('accountPassword')?.value||'';
-  if(!name||!phone)return toast('اكتب الاسم ورقم الموبايل');
-  if(password && password.length<4)return toast('كلمة المرور لازم تكون 4 أحرف أو أرقام على الأقل');
-  if(session.role==='manager'){
-    if(phone!==db.manager.phone && db.coaches.some(c=>c.phone===phone))return toast('رقم الموبايل مستخدم لحساب كابتن');
-    db.manager.phone=phone;if(password)db.manager.password=password;session.name=name;
-  }else{
-    const c=db.coaches.find(x=>x.id===session.id);if(!c)return toast('تعذر العثور على الحساب');
-    if(phone!==c.phone && (db.coaches.some(x=>x.id!==c.id&&x.phone===phone)||phone===db.manager.phone))return toast('رقم الموبايل مستخدم بالفعل');
-    c.name=name;c.phone=phone;if(password)c.password=password;session.name=name;session.phone=phone;
-  }
-  localStorage.setItem(SESSION,JSON.stringify(session));saveDB();render();toast('تم حفظ بيانات الحساب');
-}
-
+function reportsPage(teams,isManager){let players=isManager?db.players:db.players.filter(p=>p.teamId===coach()?.teamId);let total=0;let rows=players.map(p=>{let entries=Object.entries(db.attendance).filter(([k,v])=>k.endsWith('_'+p.id));let pr=entries.filter(([k,v])=>v.status==='present').length,ab=entries.filter(([k,v])=>v.status==='absent').length,ex=entries.filter(([k,v])=>v.status==='excused').length;total+=entries.length;return `<div class="reportrow"><div><strong>${esc(p.name)}</strong><div class="small muted">${esc(teamById(p.teamId)?.name||'')}</div><div class="small">حاضر ${pr} · غائب ${ab} · معتذر ${ex}</div></div><strong>${entries.length?Math.round(pr/entries.length*100):0}%</strong></div>`});return `<div class="card"><h2>تقارير الحضور</h2><div class="grid"><div class="stat"><strong>${players.length}</strong><span>لاعب</span></div><div class="stat"><strong>${total}</strong><span>سجلات حالات</span></div></div>${rows.join('')||'<div class="empty">لا توجد بيانات بعد</div>'}<button class="primary" style="width:100%;margin-top:12px" onclick="exportCSV()">تصدير تقرير Excel (شهري)</button></div>`}
+function settingsPage(){return `<div class="card"><h2>الإعدادات والنسخ الاحتياطي</h2><p class="muted">احفظ نسخة احتياطية من بيانات التجربة، أو استرجع نسخة محفوظة قبل كده.</p><button class="primary" style="width:100%" onclick="backup()">تنزيل نسخة احتياطية</button><div class="field"><label>استرجاع نسخة JSON</label><input type="file" id="restoreFile" accept=".json,application/json"></div><button class="secondary" style="width:100%" onclick="restore()">استرجاع البيانات</button><button class="danger" style="width:100%;margin-top:10px" onclick="resetDemo()">إعادة بيانات التجربة الافتراضية</button><div class="notice" style="margin-top:14px">النسخة الحالية تعمل بدون إنترنت بعد فتحها، لكن كل جهاز له بياناته. النسخة النهائية تحتاج خادمًا آمنًا لتزامن الحضور بين المدير والكباتن.</div><p class="foot">Handball Academy Manager · إصدار تجريبي 2</p></div>`}
 function backup(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});download(blob,'handball-backup.json')}
 function restore(){let f=document.getElementById('restoreFile').files[0];if(!f)return toast('اختار ملف النسخة الاحتياطية');let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.teams||!x.players||!x.attendance)throw 0;db=x;saveDB();render();toast('تم استرجاع النسخة')}catch(e){toast('الملف غير صالح')}};r.readAsText(f)}
 function resetDemo(){if(!confirm('ده هيرجع بيانات التجربة الافتراضية ويمسح التعديلات الحالية على الجهاز. تكمل؟'))return;db=JSON.parse(JSON.stringify(initial));saveDB();render();toast('تمت إعادة البيانات')}
 function exportCSV(){
   const allowedPlayers = db.players.filter(p => !session || session.role === 'manager' || p.teamId === coach()?.teamId);
-  const now = new Date();
-  const monthInput = prompt('اكتب الشهر المطلوب بصيغة YYYY-MM، أو اتركه فارغًا لتصدير كل الشهور:', now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0'));
-  if (monthInput === null) return;
-  const selectedMonth = monthInput.trim();
-  if (selectedMonth && !/^\d{4}-\d{2}$/.test(selectedMonth)) return toast('اكتب الشهر بالشكل 2026-10');
-  const records=[];
-  Object.entries(db.attendance || {}).forEach(([key,v])=>{
+  const details = [['اللاعب','الفريق','التاريخ','الشهر','الحالة']];
+  const monthlyMap = {};
+  Object.entries(db.attendance || {}).forEach(([key,v]) => {
     const parts=key.split('_'), pid=parts.pop(), date=parts.join('_');
     const player=allowedPlayers.find(x=>x.id===pid); if(!player) return;
-    const month=String(date).slice(0,7); if(selectedMonth && month!==selectedMonth) return;
-    records.push({player,team:teamById(player.teamId)?.name||'بدون فريق',date,month,status:v.status});
+    const team=teamById(player.teamId)?.name||'';
+    const status=v.status==='present'?'حاضر':v.status==='absent'?'غائب':v.status==='excused'?'معتذر':'غير محدد';
+    const month=String(date).slice(0,7);
+    details.push([player.name,team,date,month,status]);
+    const k=month+'|'+player.id;
+    if(!monthlyMap[k]) monthlyMap[k]={month,player:player.name,team,present:0,absent:0,excused:0,total:0};
+    monthlyMap[k].total++;
+    if(v.status==='present') monthlyMap[k].present++;
+    else if(v.status==='absent') monthlyMap[k].absent++;
+    else if(v.status==='excused') monthlyMap[k].excused++;
   });
-  const monthly=[['حصر الحضور والغياب الشهري'],['الشهر',selectedMonth||'كل الشهور'],[],['الفريق','اسم اللاعب','عدد مرات الحضور','عدد مرات الغياب','عدد مرات الاعتذار','إجمالي مرات التسجيل']];
-  const teams=visibleTeams().filter(t=>allowedPlayers.some(p=>p.teamId===t.id));
-  teams.forEach(team=>{
-    const teamPlayers=allowedPlayers.filter(p=>p.teamId===team.id).sort((a,b)=>a.name.localeCompare(b.name,'ar'));
-    const teamRows=teamPlayers.map(player=>{
-      const rr=records.filter(r=>r.player.id===player.id);
-      return {team:team.name,player:player.name,present:rr.filter(r=>r.status==='present').length,absent:rr.filter(r=>r.status==='absent').length,excused:rr.filter(r=>r.status==='excused').length,total:rr.length};
-    });
-    monthly.push([team.name,'','','','','']);
-    teamRows.forEach(r=>monthly.push([r.team,r.player,r.present,r.absent,r.excused,r.total]));
-    monthly.push(['','','','','','']);
-  });
-  const details=[['تفاصيل الحضور'],['اللاعب','الفريق','التاريخ','الشهر','الحالة']];
-  const statusLabel=s=>s==='present'?'حاضر':s==='absent'?'غائب':s==='excused'?'معتذر':'غير محدد';
-  records.sort((a,b)=>a.team.localeCompare(b.team,'ar')||a.player.name.localeCompare(b.player.name,'ar')||a.date.localeCompare(b.date));
-  records.forEach(r=>details.push([r.player.name,r.team,r.date,r.month,statusLabel(r.status)]));
-  const xmlEsc=v=>String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
-  const colName=n=>{let out='';while(n){let r=(n-1)%26;out=String.fromCharCode(65+r)+out;n=Math.floor((n-1)/26)}return out};
-  const sheetXml=rows=> '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheetData>'+rows.map((row,ri)=>'<row r="'+(ri+1)+'">'+row.map((v,ci)=>{const ref=colName(ci+1)+(ri+1);if(typeof v==='number')return '<c r="'+ref+'"><v>'+v+'</v></c>';return '<c r="'+ref+'" t="inlineStr"><is><t xml:space="preserve">'+xmlEsc(v)+'</t></is></c>'}).join('')+'</row>').join('')+'</sheetData></worksheet>';
-  const files={
-    '[Content_Types].xml':'<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/worksheets/sheet2.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>',
-    '_rels/.rels':'<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>',
-    'xl/workbook.xml':'<?xml version="1.0" encoding="UTF-8"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="الحصر الشهري" sheetId="1" r:id="rId1"/><sheet name="تفاصيل الحضور" sheetId="2" r:id="rId2"/></sheets></workbook>',
-    'xl/_rels/workbook.xml.rels':'<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet2.xml"/></Relationships>',
-    'xl/worksheets/sheet1.xml':sheetXml(monthly),
-    'xl/worksheets/sheet2.xml':sheetXml(details)
-  };
-  createXlsxBlob(files).then(blob=>download(blob,'handball-monthly-report.xlsx')).catch(()=>toast('تعذر إنشاء ملف Excel'));
-}
-async function createXlsxBlob(files){
-  const enc=new TextEncoder(); const crcTable=new Uint32Array(256);
-  for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=(c&1)?(0xedb88320^(c>>>1)):(c>>>1);crcTable[n]=c>>>0;}
-  const crc32=bytes=>{let c=0xffffffff;for(let i=0;i<bytes.length;i++)c=crcTable[(c^bytes[i])&255]^(c>>>8);return (c^0xffffffff)>>>0};
-  const chunks=[],central=[];let offset=0;
-  const put16=(v)=>{const a=new Uint8Array(2);new DataView(a.buffer).setUint16(0,v,true);return a};
-  const put32=(v)=>{const a=new Uint8Array(4);new DataView(a.buffer).setUint32(0,v>>>0,true);return a};
-  const join=arr=>{let len=arr.reduce((n,a)=>n+a.length,0),out=new Uint8Array(len),pos=0;arr.forEach(a=>{out.set(a,pos);pos+=a.length});return out};
-  for(const [name,content] of Object.entries(files)){
-    const nb=enc.encode(name), data=enc.encode(content), crc=crc32(data);
-    const local=join([put32(0x04034b50),put16(20),put16(0x0800),put16(0),put16(0),put16(0),put32(crc),put32(data.length),put32(data.length),put16(nb.length),put16(0),nb,data]);chunks.push(local);
-    const dir=join([put32(0x02014b50),put16(20),put16(20),put16(0x0800),put16(0),put16(0),put16(0),put32(crc),put32(data.length),put32(data.length),put16(nb.length),put16(0),put16(0),put16(0),put16(0),put32(0),put32(offset),nb]);central.push(dir);offset+=local.length;
-  }
-  const centralBytes=join(central),end=join([put32(0x06054b50),put16(0),put16(0),put16(central.length),put16(central.length),put32(centralBytes.length),put32(offset),put16(0)]);
-  return new Blob([...chunks,centralBytes,end],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+  const monthly=[['الشهر','اللاعب','الفريق','أيام الحضور','أيام الغياب','أيام الاعتذار','إجمالي السجلات']];
+  Object.values(monthlyMap).sort((a,b)=>a.month.localeCompare(b.month)||a.player.localeCompare(b.player,'ar')).forEach(x=>monthly.push([x.month,x.player,x.team,x.present,x.absent,x.excused,x.total]));
+  const xmlEscape = v => String(v ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
+  const worksheet = (name, rows) => '<Worksheet ss:Name="'+xmlEscape(name)+'"><Table>'+rows.map(row=>'<Row>'+row.map(val=>{const numeric=typeof val==='number';return '<Cell><Data ss:Type="'+(numeric?'Number':'String')+'">'+xmlEscape(val)+'</Data></Cell>'}).join('')+'</Row>').join('')+'</Table></Worksheet>';
+  const workbook='<?xml version="1.0" encoding="UTF-8"?><?mso-application progid="Excel.Sheet"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">'+worksheet('الحصر الشهري',monthly)+worksheet('تفاصيل الحضور',details)+'</Workbook>';
+  download(new Blob(['\ufeff',workbook],{type:'application/vnd.ms-excel;charset=utf-8'}),'handball-monthly-report.xls');
 }
 function download(blob,name){
   if(window.AndroidFileBridge && typeof window.AndroidFileBridge.saveFile==='function'){
