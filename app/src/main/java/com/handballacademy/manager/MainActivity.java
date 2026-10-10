@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
         setContentView(webView);
 
         webView.loadUrl("file:///android_asset/index.html");
-    }
+Toast.makeText(this, "جاري فتح واجهة التطبيق", Toast.LENGTH_LONG).show();
 
     @Override
     public void onBackPressed() {
