@@ -18,10 +18,32 @@
 <div id="toast" class="toast hidden"></div>
 <script>
 const KEY='ham_v2_data', SESSION='ham_v2_session';
-const initial={teams:[{id:'t1',name:'مواليد 2015 بنين',coachId:'c1'},{id:'t2',name:'مواليد 2014 بنات',coachId:'c2'}],coaches:[{id:'c1',name:'كابتن أحمد',phone:'01000000001',password:'1234',teamId:'t1'},{id:'c2',name:'كابتن منى',phone:'01000000002',password:'1234',teamId:'t2'}],players:[{id:'p1',name:'محمد أحمد',teamId:'t1',number:'7'},{id:'p2',name:'عمر محمود',teamId:'t1',number:'10'},{id:'p3',name:'يوسف علي',teamId:'t1',number:'11'},{id:'p4',name:'سلمى حسن',teamId:'t2',number:'4'},{id:'p5',name:'ملك أحمد',teamId:'t2',number:'8'}],attendance:{},manager:{phone:'01000000000',password:'1234'}};
+const initial={teams:[{id:'t1',name:'مواليد 2015 بنين',coachId:'c1'},{id:'t2',name:'مواليد 2014 بنات',coachId:'c2'}],coaches:[{id:'c1',name:'كابتن أحمد',phone:'01000000001',password:'1234',teamId:'t1'},{id:'c2',name:'كابتن منى',phone:'01000000002',password:'1234',teamId:'t2'}],players:[{id:'p2015_01',name:'ياسين احمد مجدى',teamId:'t1',number:'01'},{id:'p2015_02',name:'يحيى محمد عبدالظاهر',teamId:'t1',number:'02'},{id:'p2015_03',name:'مروان احمد سمير',teamId:'t1',number:'03'},{id:'p2015_04',name:'مالك احمد سمير',teamId:'t1',number:'04'},{id:'p2015_05',name:'احمد محمد فرحات',teamId:'t1',number:'05'},{id:'p2015_06',name:'انس عبدالله القرش',teamId:'t1',number:'06'},{id:'p2015_07',name:'عبدالرحمن محمد الفقى',teamId:'t1',number:'07'},{id:'p2015_08',name:'يوسف هانى السيد',teamId:'t1',number:'08'},{id:'p2015_09',name:'عمر محمد ابو شادى',teamId:'t1',number:'09'},{id:'p2015_10',name:'محمد احمد القصراوى',teamId:'t1',number:'10'},{id:'p2015_11',name:'على احمد عبدالرازق',teamId:'t1',number:'11'},{id:'p2015_12',name:'حمزة حسن القطب',teamId:'t1',number:'12'},{id:'p2015_13',name:'احمد حسن القطب',teamId:'t1',number:'13'},{id:'p2015_14',name:'مالك محمد دنيا',teamId:'t1',number:'14'},{id:'p2015_15',name:'حمزة مصطفى معوض',teamId:'t1',number:'15'},{id:'p2015_16',name:'مازن معاذ قشقوش',teamId:'t1',number:'16'},{id:'p2015_17',name:'عمار عمرو كساب',teamId:'t1',number:'17'},{id:'p2015_18',name:'سامى احمد فودة',teamId:'t1',number:'18'},{id:'p2015_19',name:'مازن محمود حلوه',teamId:'t1',number:'19'},{id:'p2015_20',name:'محمد ياسر',teamId:'t1',number:'20'},{id:'p2015_21',name:'سليم ياسر',teamId:'t1',number:'21'},{id:'p2015_22',name:'صالح احمد مجدى',teamId:'t1',number:'22'},{id:'p2015_23',name:'يونس عبدالله القرش',teamId:'t1',number:'23'}],attendance:{},manager:{phone:'01000000000',password:'1234'}};
 let db=loadDB(), session=JSON.parse(localStorage.getItem(SESSION)||'null'), tab='home', chosenTeam='', chosenDate=today();
 function loadDB(){try{let d=JSON.parse(localStorage.getItem(KEY));return d&&d.teams?d:structuredClone(initial)}catch(e){return JSON.parse(JSON.stringify(initial))}}
 function saveDB(){localStorage.setItem(KEY,JSON.stringify(db))}
+
+function ensure2015Roster(){
+  const roster = [
+    'ياسين احمد مجدى','يحيى محمد عبدالظاهر','مروان احمد سمير','مالك احمد سمير',
+    'احمد محمد فرحات','انس عبدالله القرش','عبدالرحمن محمد الفقى','يوسف هانى السيد',
+    'عمر محمد ابو شادى','محمد احمد القصراوى','على احمد عبدالرازق','حمزة حسن القطب',
+    'احمد حسن القطب','مالك محمد دنيا','حمزة مصطفى معوض','مازن معاذ قشقوش',
+    'عمار عمرو كساب','سامى احمد فودة','مازن محمود حلوه','محمد ياسر','سليم ياسر',
+    'صالح احمد مجدى','يونس عبدالله القرش'
+  ];
+  if(!db.teams.some(t=>t.id==='t1')) db.teams.unshift({id:'t1',name:'مواليد 2015 بنين',coachId:'c1'});
+  // Remove only the original sample players in the 2015 team; keep any real records and attendance.
+  const sampleNames=['محمد أحمد','عمر محمود','يوسف علي'];
+  db.players=db.players.filter(p=>!(p.teamId==='t1' && sampleNames.includes(p.name)));
+  roster.forEach((name,i)=>{
+    if(!db.players.some(p=>p.teamId==='t1' && p.name===name)){
+      db.players.push({id:'p2015_'+String(i+1).padStart(2,'0'),name,teamId:'t1',number:String(i+1)});
+    }
+  });
+  saveDB();
+}
+
 function today(){return new Date().toLocaleDateString('en-CA')}
 function id(){return Math.random().toString(36).slice(2,10)}
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
@@ -125,6 +147,7 @@ function download(blob,name){
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);
 }
 
+ensure2015Roster();
 render();
 </script>
 </body>
