@@ -11,151 +11,147 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 14px;font-weight:700}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:var(--navy);color:white}.secondary{background:var(--pale);color:var(--navy)}.danger{background:#feeceb;color:var(--red)}.success{background:#e4f6ee;color:var(--green)}.muted{color:var(--muted)}.small{font-size:12px}.appbar{background:var(--navy);color:white;padding:18px 16px 24px;border-radius:0 0 24px 24px}.brand{display:flex;align-items:center;gap:12px}.ball{width:52px;height:52px;flex-shrink:0;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--navy);font-size:30px}.appbar h1{font-size:18px;margin:0}.appbar p{font-size:12px;margin:4px 0 0;color:#d6e4f0}.appbar .topline{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:13px}.wrap{max-width:760px;margin:auto;padding:14px 14px 90px}.card{background:white;border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 4px 18px #102a430c}.card h2{font-size:17px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{background:#f7f9fc;border:1px solid #edf1f5;border-radius:14px;padding:14px}.stat strong{display:block;font-size:25px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field label{font-size:13px;font-weight:700}.field input,.field select{width:100%;padding:12px;border:1px solid #d8e0e8;border-radius:11px;background:white;color:var(--ink)}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5eaf0;display:flex;justify-content:center;gap:4px;padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:5}.nav button{flex:1;max-width:150px;background:transparent;color:var(--muted);font-size:12px;padding:8px 3px}.nav button.active{background:var(--pale);color:var(--navy)}.player{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #edf1f5}.player:last-child{border-bottom:0}.avatar{width:38px;height:38px;border-radius:12px;background:var(--pale);display:grid;place-items:center;font-weight:800;color:var(--navy)}.playerinfo{flex:1;min-width:0}.playerinfo strong{display:block;font-size:14px}.playerinfo small{color:var(--muted)}.statusbtn{padding:8px 9px;font-size:12px;min-width:67px}.present{background:#e3f6ed;color:var(--green)}.absent{background:#ffebea;color:var(--red)}.excused{background:#fff2d9;color:var(--amber)}.pill{display:inline-block;border-radius:20px;padding:5px 9px;background:#edf2f7;font-size:11px;color:var(--navy)}.empty{text-align:center;padding:26px 10px;color:var(--muted)}.hidden{display:none!important}.notice{background:#fff5d9;border:1px solid #f5df9d;color:#795000;padding:11px 12px;border-radius:12px;font-size:12px;line-height:1.6}.login{max-width:430px;margin:28px auto;padding:0 16px}.login .card{padding:22px}.loginlogo{text-align:center;padding:18px 0}.loginlogo .ball{margin:0 auto 10px;width:72px;height:72px;font-size:42px}.loginlogo h1{font-size:21px;margin:0}.loginlogo p{margin:5px;color:var(--muted);font-size:13px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px}.sectionhead h2{margin:0}.reportrow{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #edf1f5;font-size:13px}.reportrow:last-child{border:0}.toast{position:fixed;top:12px;left:12px;right:12px;z-index:20;background:#142333;color:white;border-radius:12px;padding:13px;text-align:center;box-shadow:0 8px 30px #0002}.foot{text-align:center;color:var(--muted);font-size:11px;margin-top:20px}
 @media(min-width:600px){.wrap{padding-top:22px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.appbar{padding-left:max(20px,calc((100% - 730px)/2));padding-right:max(20px,calc((100% - 730px)/2))}}
 
-/* Handball Academy visual refresh */
-:root{--navy:#071b34;--blue:#1769e8;--pale:#e5efff;--bg:#eaf1fb;--ink:#10243d;--muted:#647b96;--green:#13a66b;--red:#d6384a;--amber:#f0a22b}
-*{ -webkit-tap-highlight-color:transparent}
-body{background:radial-gradient(ellipse at 12% 4%,#c6e0ff 0,transparent 32%),radial-gradient(ellipse at 92% 35%,#d4d0ff 0,transparent 27%),linear-gradient(155deg,#eaf3ff,#f4f7fc 56%,#e1f8ef);color:var(--ink)}
-.appbar{background:linear-gradient(125deg,#06162b 0%,#0c3970 56%,#1769e8 100%);box-shadow:0 14px 32px #071b3433;border-radius:0 0 30px 30px;position:relative;overflow:hidden}
-.appbar:before{content:"";position:absolute;right:-55px;top:-125px;width:260px;height:260px;border:1px solid #ffffff24;border-radius:50%;box-shadow:0 0 0 24px #ffffff08,0 0 0 52px #ffffff06}
-.appbar:after{content:"";position:absolute;left:-50px;bottom:-130px;width:230px;height:230px;border:2px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 22px #ffffff08,0 0 0 48px #ffffff05;pointer-events:none}
-.brand,.topline{position:relative;z-index:1}
-.ball{box-shadow:0 7px 18px #0003;border:2px solid #ffffff8a}
-.ball.logo-ball{background:#0a2b50}
-.ball.logo-ball img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
-.wrap{padding-bottom:110px}
-.card{background:linear-gradient(145deg,#fff 0%,#f3f7ff 100%);border:1px solid #dce8f8;border-radius:22px;box-shadow:0 8px 24px #12365b12,0 2px 6px #12365b08}
-.card h2{color:#102f55}
-.grid{gap:11px}
-.stat{position:relative;overflow:hidden;border:1px solid #ffffffa8;border-radius:19px;padding:15px;background:linear-gradient(140deg,#dceaff,#c4dcff);box-shadow:0 7px 17px #16365a12}
-.stat:nth-child(4n+2){background:linear-gradient(140deg,#d9f8e9,#b9efd6)}
-.stat:nth-child(4n+3){background:linear-gradient(140deg,#fff0d3,#ffdfa0)}
-.stat:nth-child(4n+4){background:linear-gradient(140deg,#ffe5e8,#ffcbd2)}
-.stat strong{font-size:28px;color:#092b50}.stat span{font-weight:750;color:#405b78}
-button{border-radius:14px;transition:transform .12s ease,filter .12s ease;box-shadow:0 3px 8px #102a4308}
-button:active{transform:scale(.98);filter:brightness(.98)}
-.primary{background:linear-gradient(135deg,#0a2b50,#1769e8);color:#fff;box-shadow:0 7px 16px #1769e83b}
-.secondary{background:linear-gradient(135deg,#e8f1ff,#d6e6ff);color:#123d70;border:1px solid #c7dcff}
-.danger{background:linear-gradient(135deg,#ffe7e9,#ffd0d5);color:#b82032}
-.success{background:linear-gradient(135deg,#ddf9eb,#b9efd5);color:#08734d}
-.field input,.field select{border:1px solid #d5e2f1;border-radius:13px;padding:13px;background:#fafdff;color:var(--ink)}
-.field input:focus,.field select:focus{outline:2px solid #8ab8ff;border-color:#4c8cf2}
-.nav{background:linear-gradient(180deg,#fff,#edf4ff);border-top:1px solid #dce7f5;box-shadow:0 -8px 26px #102a4315;backdrop-filter:blur(16px);padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
-.nav button{flex:1;max-width:150px;background:#eaf0f8;color:#65758b;font-size:12px;padding:9px 3px;border:1px solid transparent;border-radius:15px;font-weight:800}
-.nav button:nth-child(1){background:#e5efff;color:#2456a3}
-.nav button:nth-child(2){background:#dcf8e9;color:#137b53}
-.nav button:nth-child(3){background:#fff0d8;color:#996000}
-.nav button:nth-child(4){background:#eee8ff;color:#6242b5}
-.nav button:nth-child(5){background:#e1f6fa;color:#08778a}
-.nav button.active{background:linear-gradient(135deg,#0b2b50,#1769e8);color:#fff;box-shadow:0 5px 12px #1769e83b}
-.player{gap:7px;background:#f7faff;border:1px solid #e5edf8;border-radius:15px;padding:10px;margin:8px 0}
-.avatar{border-radius:13px;background:linear-gradient(145deg,#dceaff,#b9d5ff);color:#103c75}
-.statusbtn{min-width:58px;border-radius:11px;padding:9px 7px;font-weight:850}
-.present{background:linear-gradient(135deg,#d9f8e9,#b7efd5);color:#087348;border:1px solid #a5e7c6}
-.absent{background:linear-gradient(135deg,#ffe5e7,#ffcbd0);color:#b71f32;border:1px solid #ffb7bf}
-.excused{background:linear-gradient(135deg,#fff3d8,#ffe3a8);color:#8c5900;border:1px solid #f5d58c}
-.pill{background:#e3edff;color:#113e78;font-weight:800}
-.notice{border-radius:15px}
-.reportrow{padding:12px 8px;border-radius:12px}
-.reportrow:nth-child(even){background:#f0f6ff}
-/* Illustrated, dark sports login */
-body:has(.login){background:radial-gradient(ellipse at 50% 0%,#1b5eb1 0%,#0b2b50 36%,#061426 78%);min-height:100vh}
-.login{max-width:460px;margin:0 auto;padding:24px 17px 36px;position:relative}
-.login:before{content:"";position:fixed;top:-110px;left:-120px;width:330px;height:330px;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 0 24px #ffffff05,0 0 0 50px #ffffff04;pointer-events:none}
-.loginlogo{position:relative;text-align:center;padding:20px 8px 23px;color:#fff}
-.loginlogo .ball{margin:0 auto 13px;width:100px;height:100px;font-size:42px;border-radius:29px;border:2px solid #ffffff8c;box-shadow:0 14px 35px #0005,0 0 0 9px #ffffff0b}
-.loginlogo h1{font-size:22px;letter-spacing:.1px;color:#fff;margin:0;font-weight:900}
-.loginlogo p{margin:7px 0 0;color:#d0e5ff;font-size:13px}
-.login .card{position:relative;background:linear-gradient(155deg,#102e50f5,#0a2039f5);border:1px solid #ffffff25;border-radius:25px;padding:22px;box-shadow:0 18px 45px #0004;color:#fff}
-.login .card h2{color:#fff;font-size:19px;margin-bottom:17px}
-.login .field label{color:#d9e9fc}
-.login .field input,.login .field select{background:#f0f6ff;border:1px solid #bad2f3;color:#0c2745;border-radius:13px}
-.login .primary{width:100%;padding:14px;background:linear-gradient(110deg,#1a75ff,#1557c8);font-size:16px}
-.login .secondary{width:100%;margin-top:9px;background:#d9f8e9;color:#08734d;border:0}
-.login .notice{background:#17395b;border:1px solid #315b82;color:#d8e9ff}
-.login .small.muted{color:#c3d7ee;line-height:1.9}
-.foot{color:var(--muted)}
-@media(min-width:600px){.wrap{padding-top:22px}.login{padding-top:35px}}
+/* Premium Handball Academy visual refresh */
+:root{--navy:#06152b;--blue:#168cff;--pale:#102d4d;--bg:#030b19;--ink:#eef5ff;--muted:#94a9c7;--green:#17d6a0;--red:#ff4f69;--amber:#ffb12b}
+html{background:#030b19}body{background:radial-gradient(ellipse at 15% 0%,#123e75 0,transparent 35%),radial-gradient(ellipse at 95% 16%,#74301f 0,transparent 29%),linear-gradient(160deg,#06152b 0%,#020817 62%,#071b32 100%);background-attachment:fixed;color:var(--ink);min-height:100vh}
+button{transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}button:active{transform:scale(.98)}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #21a5ff;outline-offset:2px}
+.primary{background:linear-gradient(105deg,#ff3b72 0%,#ff6a21 52%,#ffbf19 100%);color:#08152b;box-shadow:0 7px 24px #ff632c30;font-weight:850}
+.secondary{background:linear-gradient(135deg,#123b68,#0a2140);color:#eaf4ff;border:1px solid #25507e}
+.danger{background:#40182b;color:#ff9eb0}.success{background:#0b3c39;color:#66f0cb}
+.appbar{position:relative;overflow:hidden;background:linear-gradient(112deg,#07172f 0%,#0b2b50 57%,#10213a 100%);border-radius:0 0 28px 28px;border-bottom:1px solid #1b5282;box-shadow:0 14px 35px #0004}
+.appbar:after{content:"";position:absolute;width:220px;height:220px;right:-70px;top:-110px;border:1px solid #2f8df355;border-radius:50%;box-shadow:0 0 0 24px #168cff0a,0 0 0 50px #168cff08;pointer-events:none}
+.brand,.topline{position:relative;z-index:1}.ball{background:linear-gradient(145deg,#168cff,#163f82 65%,#ff842b);color:white;border:1px solid #75c4ff70;box-shadow:0 0 25px #168cff45;border-radius:17px}
+.appbar h1{letter-spacing:.2px;font-weight:850}.appbar p{color:#a8c9ec}
+.wrap{padding-top:16px}
+.card{background:linear-gradient(145deg,#0b1c33f5,#071426f5);border:1px solid #193b60;box-shadow:0 10px 28px #0003,inset 0 1px #ffffff08;color:var(--ink);border-radius:20px}
+.card h2{color:#f3f7ff}.grid{gap:11px}
+.stat{background:linear-gradient(145deg,#102c4b,#0a1a30);border:1px solid #1e4c76;border-radius:17px;box-shadow:inset 0 1px #ffffff08}
+.stat strong{color:#53b7ff}.stat:nth-child(2) strong{color:#20dfb0}.stat:nth-child(3) strong{color:#ffb22d}.stat:nth-child(4) strong{color:#ff6f91}
+.field label{color:#c7d9f0}.field input,.field select{background:#06162b;color:#f0f6ff;border:1px solid #21476f;border-radius:13px;padding:13px}.field input::placeholder{color:#7188a8}.field input:focus,.field select:focus{border-color:#168cff;box-shadow:0 0 0 3px #168cff20;outline:0}
+.nav{background:#061329f5;backdrop-filter:blur(18px);border-top:1px solid #1b3d61;box-shadow:0 -8px 24px #0003}.nav button{color:#8099b9;border-radius:12px}.nav button.active{background:linear-gradient(135deg,#103b68,#13294a);color:#ffbd36;box-shadow:inset 0 0 0 1px #267ac0}
+.player{border-color:#18314f}.avatar{background:linear-gradient(145deg,#0f6fbd,#142b51);color:white;border:1px solid #2d8ee0}.pill{background:#102e4d;color:#a9d8ff;border:1px solid #22527e}
+.present{background:#0a3d39;color:#5cf0c6}.absent{background:#451c31;color:#ff9ab0}.excused{background:#49351a;color:#ffd17a}
+.notice{background:#332b1a;border-color:#74531f;color:#ffe1a1}.toast{background:#102b49;border:1px solid #2a6ca4;color:white;box-shadow:0 10px 35px #0008}
+.sectionhead h2{color:#f5f8ff}.reportrow{border-color:#19324f}.foot{color:#8299b8}
+.login{max-width:460px;margin:0 auto;padding:0 17px 34px}
+.login .card{padding:22px 20px 20px;border-radius:24px;background:linear-gradient(150deg,#07162bf5,#030b18f8);border:1px solid #1c426b;box-shadow:0 22px 55px #0007,0 0 35px #168cff0c}
+.loginlogo{position:relative;overflow:hidden;margin:0 -17px 18px;padding:26px 18px 22px;min-height:265px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;background:radial-gradient(ellipse at 18% 38%,#087eea55,transparent 40%),radial-gradient(ellipse at 90% 15%,#ff7b2450,transparent 36%),linear-gradient(155deg,#07172e,#0b2d4c 57%,#061225);border-bottom:1px solid #24517b;border-radius:0 0 30px 30px}
+.loginlogo:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#020a1455 0%,#06152b20 40%,#020916e8 100%),url("handball_academy_icon.png") center 25%/min(58vw,225px) auto no-repeat;opacity:.98;pointer-events:none}
+.loginlogo:after{content:"";position:absolute;width:240px;height:240px;top:-135px;left:-80px;border:1px solid #4caaff55;border-radius:50%;box-shadow:0 0 0 20px #168cff0c,0 0 0 43px #168cff09}
+.loginlogo .ball{display:none}.loginlogo h1,.loginlogo p{position:relative;z-index:1}
+.loginlogo h1{font-size:25px;line-height:1.2;font-weight:950;letter-spacing:-.4px;color:#fff;text-shadow:0 3px 16px #000}
+.loginlogo h1 span{color:#ff9b28}.loginlogo p{color:#bad4f3!important;font-size:12px!important;letter-spacing:2.3px;text-transform:uppercase;margin-top:8px!important}
+.login .card h2{font-size:19px;margin-bottom:17px}
+.login .field{margin:13px 0}.login .field input{padding:15px 14px;background:#06162b;border-color:#1b3c61}
+.login .primary{padding:15px;border-radius:14px;font-size:15px;letter-spacing:.2px}
+.login .notice{border-radius:13px;font-size:11px;background:#111f34;border-color:#243d5d;color:#9bb8d9}
+.login .small.muted{color:#7f98b9;line-height:1.6}
+.login .foot{margin-top:15px}
+@media(min-width:600px){.login{padding-top:20px}.loginlogo{border-radius:0 0 32px 32px}}
 
 </style>
 </head>
 <body>
 <div id="app"></div>
 <div id="toast" class="toast hidden"></div>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-functions-compat.js"></script>
 <script>
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyDivjBuzpt5QmLJdphXkWMllc1khoHa8I8",
+  authDomain: "handball-academy-manager-fe8e4.firebaseapp.com",
+  projectId: "handball-academy-manager-fe8e4",
+  storageBucket: "handball-academy-manager-fe8e4.firebasestorage.app",
+  messagingSenderId: "142024172167",
+  appId: "1:142024172167:web:ae1e592810f87b09094e22",
+  measurementId: "G-VKM3WMPDJ3"
+};
+let fbApp, auth, store, cloudFunctions, cloudReady=false, syncingRemote=false, unsubs=[];
+try { fbApp=firebase.initializeApp(FIREBASE_CONFIG); auth=firebase.auth(); store=firebase.firestore(); cloudFunctions=firebase.functions(); cloudReady=true; } catch(e) { console.error('Firebase init failed',e); }
 const KEY='ham_v2_data', SESSION='ham_v2_session';
 const initial={teams:[{id:'t1',name:'مواليد 2015 بنين',coachId:'c1'},{id:'t2',name:'مواليد 2014 بنات',coachId:'c2'}],coaches:[{id:'c1',name:'كابتن أحمد',phone:'01000000001',password:'1234',teamId:'t1'},{id:'c2',name:'كابتن منى',phone:'01000000002',password:'1234',teamId:'t2'}],players:[{id:'p1',name:'محمد أحمد',teamId:'t1',number:'7'},{id:'p2',name:'عمر محمود',teamId:'t1',number:'10'},{id:'p3',name:'يوسف علي',teamId:'t1',number:'11'},{id:'p4',name:'سلمى حسن',teamId:'t2',number:'4'},{id:'p5',name:'ملك أحمد',teamId:'t2',number:'8'}],attendance:{},manager:{phone:'01000000000',password:'1234'}};
 let db=loadDB(), session=JSON.parse(localStorage.getItem(SESSION)||'null'), tab='home', chosenTeam='', chosenDate=today();
 function loadDB(){try{let d=JSON.parse(localStorage.getItem(KEY));return d&&d.teams?d:structuredClone(initial)}catch(e){return JSON.parse(JSON.stringify(initial))}}
-function saveDB(){localStorage.setItem(KEY,JSON.stringify(db))}
+function saveDB(){localStorage.setItem(KEY,JSON.stringify(db));syncToCloud()}
 function today(){return new Date().toLocaleDateString('en-CA')}
 function id(){return Math.random().toString(36).slice(2,10)}
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function teamById(tid){return db.teams.find(t=>t.id===tid)}
-function coach(){return db.coaches.find(c=>c.id===session?.id)}
+function coach(){if(session?.role==='coach')return {id:session.uid||session.id,name:session.name||'',teamId:session.teamId||''};return db.coaches.find(c=>c.id===session?.id)}
 function visibleTeams(){return session?.role==='manager'?db.teams:db.teams.filter(t=>t.id===coach()?.teamId)}
 function visiblePlayers(tid){return db.players.filter(p=>p.teamId===tid)}
 function toast(msg){let el=document.getElementById('toast');el.textContent=msg;el.classList.remove('hidden');setTimeout(()=>el.classList.add('hidden'),2300)}
-function login(phone,password,role){let found=role==='manager'?(phone===db.manager.phone&&password===db.manager.password?{id:'manager',name:'المدير',role:'manager'}:null):db.coaches.find(c=>c.phone===phone&&c.password===password)?{...db.coaches.find(c=>c.phone===phone&&c.password===password),role:'coach'}:null;if(!found){toast('رقم الموبايل أو كلمة المرور غير صحيحة');return}session=found;localStorage.setItem(SESSION,JSON.stringify(session));tab='home';render()}
-function logout(){session=null;localStorage.removeItem(SESSION);render()}
-function render(){const root=document.getElementById('app');if(!session){root.innerHTML=`<div class="login"><div class="loginlogo"><div class="ball">🤾</div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد والحضور</p></div><div class="card"><h2>تسجيل الدخول</h2><div class="field"><label>نوع الحساب</label><select id="role"><option value="manager">مدير الأكاديمية</option><option value="coach">كابتن الفريق</option></select></div><div class="field"><label>رقم الموبايل</label><input id="phone" inputmode="tel" placeholder="اكتب رقم الموبايل"></div><div class="field"><label>كلمة المرور</label><input id="password" type="password" placeholder="كلمة المرور"></div><button class="primary" style="width:100%" onclick="login(document.getElementById('phone').value,document.getElementById('password').value,document.getElementById('role').value)">دخول</button><button class="secondary" style="width:100%;margin-top:8px" onclick="demoLogin()">دخول سريع للتجربة</button><div class="notice" style="margin-top:14px">نسخة تطوير تجريبية تحفظ البيانات على نفس الجهاز فقط. المزامنة بين أجهزة مختلفة تحتاج ربط خادم آمن.</div><p class="small muted">حساب المدير التجريبي: 01000000000 / 1234<br>الكابتن أحمد: 01000000001 / 1234<br>الكابتن منى: 01000000002 / 1234</p></div></div>`;return}
+async function login(email,password,role){
+ if(!cloudReady){toast('الاتصال بـ Firebase فشل. تأكد من الإنترنت وإعدادات المشروع.');return}
+ email=String(email||'').trim();
+ if(!email||!password){toast('اكتب البريد الإلكتروني وكلمة المرور');return}
+ try {
+   const cred=await auth.signInWithEmailAndPassword(email,password);
+   const snap=await store.collection('users').doc(cred.user.uid).get();
+   if(!snap.exists){await auth.signOut();toast('الحساب موجود لكن المدير لم يحدد صلاحياته بعد.');return}
+   const profile=snap.data();
+   if(profile.active!==true || !['manager','coach'].includes(profile.role)){await auth.signOut();toast('الحساب موقوف أو صلاحياته غير صحيحة');return}
+   session={id:cred.user.uid,uid:cred.user.uid,name:profile.name||email,role:profile.role,teamId:profile.teamId||'',email};
+   localStorage.setItem(SESSION,JSON.stringify(session));
+   tab='home'; await startCloudSync(); render();
+ } catch(e){console.error(e);toast(firebaseError(e));}
+}
+function firebaseError(e){const c=e&&e.code||'';if(c.includes('wrong-password')||c.includes('invalid-credential')||c.includes('user-not-found'))return 'البريد الإلكتروني أو كلمة المرور غير صحيحة';if(c.includes('network'))return 'مفيش اتصال بالإنترنت';if(c.includes('too-many-requests'))return 'محاولات كثيرة. استنى شوية وجرب تاني';return 'تعذر تسجيل الدخول: '+(e&&e.message?e.message:c)}
+async function startCloudSync(){
+ stopCloudSync(); if(!session||!cloudReady)return;
+ const role=session.role, uid=session.uid;
+ if(role==='manager'){try{const existing=await store.collection('teams').limit(1).get();if(existing.empty){const b=store.batch();db.teams=initial.teams.map(t=>({...t,coachId:''}));db.players=initial.players.map(p=>({...p}));db.teams.forEach(t=>{const {id,...data}=t;b.set(store.collection('teams').doc(id),data)});db.players.forEach(p=>{const {id,...data}=p;b.set(store.collection('players').doc(id),data)});await b.commit();}}catch(e){console.error('Initial seed skipped',e)}}
+ const attach=(col,handler,query=null)=>{const ref=query||store.collection(col);unsubs.push(ref.onSnapshot(snap=>{if(!session||session.uid!==uid)return;handler(snap);},err=>{console.error(col,err);toast('مشكلة في قراءة '+col+'؛ راجع صلاحيات Firestore') }))};
+ if(role==='manager')attach('teams',snap=>{syncingRemote=true;db.teams=snap.docs.map(d=>({id:d.id,...d.data()}));finishRemoteSync()});
+ else attach('teams',snap=>{syncingRemote=true;db.teams=snap.docs.map(d=>({id:d.id,...d.data()}));finishRemoteSync()},store.collection('teams').where(firebase.firestore.FieldPath.documentId(),'==',session.teamId));
+ if(role==='manager')attach('players',snap=>{syncingRemote=true;db.players=snap.docs.map(d=>({id:d.id,...d.data()}));finishRemoteSync()});
+ else attach('players',snap=>{syncingRemote=true;db.players=snap.docs.map(d=>({id:d.id,...d.data()}));finishRemoteSync()},store.collection('players').where('teamId','==',session.teamId));
+ attach('attendance',snap=>{syncingRemote=true;const a={};snap.docs.forEach(d=>{const x=d.data();const key=x.date+'_'+x.playerId;a[key]={status:x.status,teamId:x.teamId,updatedAt:x.updatedAt&&x.updatedAt.toDate?x.updatedAt.toDate().toISOString():new Date().toISOString()}});db.attendance=a;finishRemoteSync()},role==='manager'?null:store.collection('attendance').where('teamId','==',session.teamId));
+ if(role==='manager')attach('users',snap=>{syncingRemote=true;db.coaches=snap.docs.filter(d=>d.data().role==='coach'&&d.data().active!==false).map(d=>({id:d.id,uid:d.id,name:d.data().name||'',email:d.data().email||'',phone:d.data().phone||'',teamId:d.data().teamId||''}));finishRemoteSync()});
+}
+function finishRemoteSync(){localStorage.setItem(KEY,JSON.stringify(db));setTimeout(()=>{syncingRemote=false;render()},80)}
+function stopCloudSync(){unsubs.forEach(fn=>{try{fn()}catch(e){}});unsubs=[]}
+async function syncToCloud(){
+ if(!cloudReady||!session||syncingRemote)return;
+ try{
+   const batch=store.batch();
+   if(session.role==='manager'){
+     db.teams.forEach(t=>{const {id,...data}=t;batch.set(store.collection('teams').doc(id),data,{merge:true})});
+     db.players.forEach(p=>{const {id,...data}=p;batch.set(store.collection('players').doc(id),data,{merge:true})});
+   }
+   Object.entries(db.attendance).forEach(([key,a])=>{const parts=key.split('_'),playerId=parts.pop(),date=parts.join('_');if(session.role==='coach'&&a.teamId!==session.teamId)return;batch.set(store.collection('attendance').doc(key),{date,playerId,teamId:a.teamId,status:a.status,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true})});
+   await batch.commit();
+ }catch(e){console.error(e);toast('لم تتم المزامنة: راجع صلاحيات Firestore');}
+}
+async function logout(){stopCloudSync();if(auth){try{await auth.signOut()}catch(e){}}session=null;localStorage.removeItem(SESSION);render()}
+function render(){const root=document.getElementById('app');if(!session){root.innerHTML=`<div class="login"><div class="loginlogo"><div class="ball">🤾</div><h1>Handball <span>Academy</span></h1><p>MANAGER · TRAIN · BUILD CHAMPIONS</p></div><div class="card"><h2>Welcome Back <span style="color:#ff9b28">/</span> تسجيل الدخول</h2><div class="field"><label>البريد الإلكتروني</label><input id="phone" type="email" autocomplete="username" placeholder="name@example.com" aria-label="Email address"></div><div class="field"><label>كلمة المرور</label><input id="password" type="password" autocomplete="current-password" placeholder="كلمة المرور" aria-label="Password"></div><button class="primary" style="width:100%" onclick="login(document.getElementById('phone').value,document.getElementById('password').value)">Login · دخول</button><div class="notice" style="margin-top:14px">تسجيل الدخول متصل بـ Firebase. لازم يكون الحساب مضافًا في Authentication وله صلاحية داخل users في Firestore.</div><p class="small muted">Better Coaches · Stronger Teams · Brighter Future</p></div><p class="foot">HANDball ACADEMY MANAGER · OFFICIAL APP</p></div>`;return}
 const isManager=session.role==='manager';const teams=visibleTeams();if(!chosenTeam||!teams.some(t=>t.id===chosenTeam))chosenTeam=teams[0]?.id||'';
 root.innerHTML=`<header class="appbar"><div class="brand"><div class="ball">🤾</div><div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد</p></div></div><div class="topline"><span>${esc(session.name)} · ${isManager?'مدير الأكاديمية':'كابتن الفريق'}</span><button class="secondary" style="padding:7px 10px;font-size:12px" onclick="logout()">خروج</button></div></header><main class="wrap">${tab==='home'?homePage(teams,isManager):tab==='attendance'?attendancePage(teams):tab==='teams'?teamsPage():tab==='reports'?reportsPage(teams,isManager):settingsPage()}</main><nav class="nav"><button class="${tab==='home'?'active':''}" onclick="tab='home';render()">🏠<br>الرئيسية</button><button class="${tab==='attendance'?'active':''}" onclick="tab='attendance';render()">✅<br>الحضور</button>${isManager?`<button class="${tab==='teams'?'active':''}" onclick="tab='teams';render()">👥<br>الفرق</button>`:''}<button class="${tab==='reports'?'active':''}" onclick="tab='reports';render()">📊<br>التقارير</button><button class="${tab==='settings'?'active':''}" onclick="tab='settings';render()">⚙️<br>الإعدادات</button></nav>`;
 }
-function demoLogin(){session={id:'manager',name:'المدير',role:'manager'};localStorage.setItem(SESSION,JSON.stringify(session));tab='home';render()}
-function homePage(teams,isManager){let todayKey=today();let allPlayers=isManager?db.players:db.players.filter(p=>p.teamId===coach()?.teamId);let statuses=allPlayers.map(p=>db.attendance[`${todayKey}_${p.id}`]?.status);let present=statuses.filter(s=>s==='present').length,absent=statuses.filter(s=>s==='absent').length,excused=statuses.filter(s=>s==='excused').length;return `<div class="grid"><div class="stat"><strong>${teams.length}</strong><span>الفرق المسؤولة عنها</span></div><div class="stat"><strong>${allPlayers.length}</strong><span>إجمالي اللاعبين</span></div><div class="stat"><strong>${present}</strong><span>حاضر اليوم</span></div><div class="stat"><strong>${absent}</strong><span>غائب اليوم</span></div></div><div class="card"><div class="sectionhead"><h2>تسجيل الحضور</h2><span class="pill">${esc(todayKey)}</span></div><p class="muted small">اختار الفريق وسجّل حالة كل لاعب في ثواني.</p><div class="field"><label>الفريق</label><select id="homeTeam" onchange="chosenTeam=this.value;render()">${teams.map(t=>`<option value="${t.id}" ${t.id===chosenTeam?'selected':''}>${esc(t.name)}</option>`).join('')}</select></div><button class="primary" style="width:100%" onclick="tab='attendance';chosenDate=today();render()">فتح سجل الحضور</button></div><div class="card"><h2>ملخص اليوم</h2><div class="reportrow"><span>حاضر</span><strong style="color:var(--green)">${present}</strong></div><div class="reportrow"><span>غائب</span><strong style="color:var(--red)">${absent}</strong></div><div class="reportrow"><span>معتذر</span><strong style="color:var(--amber)">${excused}</strong></div><div class="reportrow"><span>لم يتم تحديد الحالة</span><strong>${statuses.filter(s=>!s).length}</strong></div></div><div class="notice">ملاحظة: دي نسخة محلية للتجربة. بياناتها موجودة على نفس الجهاز والمتصفح، وليست متزامنة بين أجهزة الكباتن حتى الآن.</div>`}
+function demoLogin(){toast('الدخول التجريبي متوقف؛ استخدم حساب Firebase الفعلي')}
+function homePage(teams,isManager){let todayKey=today();let allPlayers=isManager?db.players:db.players.filter(p=>p.teamId===coach()?.teamId);let statuses=allPlayers.map(p=>db.attendance[`${todayKey}_${p.id}`]?.status);let present=statuses.filter(s=>s==='present').length,absent=statuses.filter(s=>s==='absent').length,excused=statuses.filter(s=>s==='excused').length;return `<div class="grid"><div class="stat"><strong>${teams.length}</strong><span>الفرق المسؤولة عنها</span></div><div class="stat"><strong>${allPlayers.length}</strong><span>إجمالي اللاعبين</span></div><div class="stat"><strong>${present}</strong><span>حاضر اليوم</span></div><div class="stat"><strong>${absent}</strong><span>غائب اليوم</span></div></div><div class="card"><div class="sectionhead"><h2>تسجيل الحضور</h2><span class="pill">${esc(todayKey)}</span></div><p class="muted small">اختار الفريق وسجّل حالة كل لاعب في ثواني.</p><div class="field"><label>الفريق</label><select id="homeTeam" onchange="chosenTeam=this.value;render()">${teams.map(t=>`<option value="${t.id}" ${t.id===chosenTeam?'selected':''}>${esc(t.name)}</option>`).join('')}</select></div><button class="primary" style="width:100%" onclick="tab='attendance';chosenDate=today();render()">فتح سجل الحضور</button></div><div class="card"><h2>ملخص اليوم</h2><div class="reportrow"><span>حاضر</span><strong style="color:var(--green)">${present}</strong></div><div class="reportrow"><span>غائب</span><strong style="color:var(--red)">${absent}</strong></div><div class="reportrow"><span>معتذر</span><strong style="color:var(--amber)">${excused}</strong></div><div class="reportrow"><span>لم يتم تحديد الحالة</span><strong>${statuses.filter(s=>!s).length}</strong></div></div><div class="notice">المزامنة اللحظية تعتمد على اتصال الإنترنت وصحة صلاحيات Firebase المنشورة. لو ظهر خطأ في المزامنة، راجع إعداد Firestore وقواعد الحماية.</div>`}
 function attendancePage(teams){if(!teams.length)return `<div class="card empty">مفيش فريق مخصص للحساب ده.</div>`;let team=teamById(chosenTeam)||teams[0];chosenTeam=team.id;let players=visiblePlayers(team.id);return `<div class="card"><div class="sectionhead"><h2>سجل الحضور</h2><span class="pill">${players.length} لاعب</span></div><div class="field"><label>الفريق</label><select onchange="chosenTeam=this.value;render()">${teams.map(t=>`<option value="${t.id}" ${t.id===team.id?'selected':''}>${esc(t.name)}</option>`).join('')}</select></div><div class="field"><label>تاريخ التمرين</label><input type="date" value="${chosenDate}" onchange="chosenDate=this.value;render()"></div><div class="row"><button class="secondary" onclick="markAll('present')">الكل حاضر</button><button class="secondary" onclick="clearDay()">مسح الحالات</button></div>${players.length?players.map((p,i)=>{let s=db.attendance[`${chosenDate}_${p.id}`]?.status;return `<div class="player"><div class="avatar">${esc(p.number||String(i+1))}</div><div class="playerinfo"><strong>${esc(p.name)}</strong><small>${s==='present'?'حاضر':s==='absent'?'غائب':s==='excused'?'معتذر':'لم تُحدد الحالة'}</small></div><button class="statusbtn ${s==='present'?'present':''}" onclick="setStatus('${p.id}','present')">حاضر</button><button class="statusbtn ${s==='absent'?'absent':''}" onclick="setStatus('${p.id}','absent')">غائب</button><button class="statusbtn ${s==='excused'?'excused':''}" onclick="setStatus('${p.id}','excused')">معتذر</button></div>`}).join(''):`<div class="empty">مفيش لاعبين في الفريق ده. المدير يقدر يضيفهم من صفحة الفرق.</div>`}<button class="primary" style="width:100%;margin-top:14px" onclick="saveAttendance()">حفظ الحضور</button></div>`}
 function setStatus(pid,status){db.attendance[`${chosenDate}_${pid}`]={status,updatedAt:new Date().toISOString(),teamId:chosenTeam};saveDB();render()}
 function markAll(s){visiblePlayers(chosenTeam).forEach(p=>db.attendance[`${chosenDate}_${p.id}`]={status:s,updatedAt:new Date().toISOString(),teamId:chosenTeam});saveDB();render();toast('تم تحديد الحالات')}
-function clearDay(){if(!confirm('تمسح حالات الحضور لهذا الفريق والتاريخ؟'))return;visiblePlayers(chosenTeam).forEach(p=>delete db.attendance[`${chosenDate}_${p.id}`]);saveDB();render()}
-function saveAttendance(){saveDB();toast('تم حفظ الحضور على الجهاز')}
-function teamsPage(){return `<div class="card"><h2>إدارة الفرق واللاعبين</h2><p class="muted small">أضف فريق أو لاعب، ثم عيّن الكابتن المسؤول عن الفريق.</p><div class="field"><label>اسم الفريق الجديد</label><input id="newTeamName" placeholder="مثال: مواليد 2016 بنين"></div><button class="primary" onclick="addTeam()">إضافة فريق</button></div><div class="card"><h2>الفرق الحالية</h2>${db.teams.map(t=>`<div class="reportrow" style="align-items:center"><div><strong>${esc(t.name)}</strong><div class="small muted">${visiblePlayers(t.id).length} لاعب · ${esc(db.coaches.find(c=>c.id===t.coachId)?.name||'بدون كابتن')}</div></div><button class="secondary" onclick="chosenTeam='${t.id}';tab='teams';renderAddPlayer('${t.id}')">إضافة لاعب</button></div>`).join('')||'<div class="empty">لسه مفيش فرق</div>'}</div><div class="card"><h2>إضافة لاعب</h2><div class="field"><label>الفريق</label><select id="playerTeam">${db.teams.map(t=>`<option value="${t.id}">${esc(t.name)}</option>`).join('')}</select></div><div class="field"><label>اسم اللاعب</label><input id="playerName" placeholder="الاسم بالكامل"></div><div class="field"><label>رقم اللاعب (اختياري)</label><input id="playerNumber" inputmode="numeric" placeholder="رقم القميص"></div><button class="primary" onclick="addPlayer()">حفظ اللاعب</button></div><div class="card"><h2>حسابات الكباتن</h2><div class="field"><label>اسم الكابتن</label><input id="coachName" placeholder="اسم الكابتن"></div><div class="field"><label>رقم الموبايل</label><input id="coachPhone" inputmode="tel" placeholder="رقم الموبايل"></div><div class="field"><label>كلمة مرور مؤقتة</label><input id="coachPassword" placeholder="٤ أرقام أو أكثر"></div><div class="field"><label>الفريق المسؤول عنه</label><select id="coachTeam">${db.teams.map(t=>`<option value="${t.id}">${esc(t.name)}</option>`).join('')}</select></div><button class="primary" onclick="addCoach()">إنشاء حساب كابتن</button><p class="small muted">الحسابات هنا تجريبية ومحفوظة محليًا فقط، فلا تستخدم كلمات مرور حقيقية.</p>${db.coaches.map(c=>`<div class="reportrow"><span>${esc(c.name)}<br><small class="muted">${esc(c.phone)} · ${esc(teamById(c.teamId)?.name||'بدون فريق')}</small></span><button class="danger" onclick="deleteCoach('${c.id}')">حذف</button></div>`).join('')}</div>`}
+async function clearDay(){if(!confirm('تمسح حالات الحضور لهذا الفريق والتاريخ؟'))return;const ids=visiblePlayers(chosenTeam).map(p=>`${chosenDate}_${p.id}`);ids.forEach(k=>delete db.attendance[k]);saveDB();if(cloudReady&&session){try{await Promise.all(ids.map(k=>store.collection('attendance').doc(k).delete()))}catch(e){console.error(e);toast('لم يتم مسح كل الحالات من السحابة؛ راجع الصلاحيات')}}render()}
+function saveAttendance(){saveDB();toast('تم حفظ الحضور وإرسال المزامنة')}
+function teamsPage(){return `<div class="card"><h2>إدارة الفرق واللاعبين</h2><p class="muted small">أضف فريق أو لاعب، ثم عيّن الكابتن المسؤول عن الفريق.</p><div class="field"><label>اسم الفريق الجديد</label><input id="newTeamName" placeholder="مثال: مواليد 2016 بنين"></div><button class="primary" onclick="addTeam()">إضافة فريق</button></div><div class="card"><h2>الفرق الحالية</h2>${db.teams.map(t=>`<div class="reportrow" style="align-items:center"><div><strong>${esc(t.name)}</strong><div class="small muted">${visiblePlayers(t.id).length} لاعب · ${esc(db.coaches.find(c=>c.id===t.coachId)?.name||'بدون كابتن')}</div></div><button class="secondary" onclick="chosenTeam='${t.id}';tab='teams';renderAddPlayer('${t.id}')">إضافة لاعب</button></div>`).join('')||'<div class="empty">لسه مفيش فرق</div>'}</div><div class="card"><h2>إضافة لاعب</h2><div class="field"><label>الفريق</label><select id="playerTeam">${db.teams.map(t=>`<option value="${t.id}">${esc(t.name)}</option>`).join('')}</select></div><div class="field"><label>اسم اللاعب</label><input id="playerName" placeholder="الاسم بالكامل"></div><div class="field"><label>رقم اللاعب (اختياري)</label><input id="playerNumber" inputmode="numeric" placeholder="رقم القميص"></div><button class="primary" onclick="addPlayer()">حفظ اللاعب</button></div><div class="card"><h2>حسابات الكباتن</h2><div class="field"><label>اسم الكابتن</label><input id="coachName" placeholder="اسم الكابتن"></div><div class="field"><label>البريد الإلكتروني للدخول</label><input id="coachEmail" type="email" placeholder="coach@example.com"></div><div class="field"><label>رقم الموبايل (اختياري)</label><input id="coachPhone" inputmode="tel" placeholder="رقم الموبايل"></div><div class="field"><label>كلمة مرور مؤقتة</label><input id="coachPassword" placeholder="٤ أرقام أو أكثر"></div><div class="field"><label>الفريق المسؤول عنه</label><select id="coachTeam">${db.teams.map(t=>`<option value="${t.id}">${esc(t.name)}</option>`).join('')}</select></div><button class="primary" onclick="addCoach()">إنشاء حساب كابتن</button><p class="small muted">إنشاء الحسابات عبر Firebase يحتاج نشر الدالة الآمنة المرفقة في مجلد functions.</p>${db.coaches.map(c=>`<div class="reportrow"><span>${esc(c.name)}<br><small class="muted">${esc(c.phone)} · ${esc(teamById(c.teamId)?.name||'بدون فريق')}</small></span><button class="danger" onclick="deleteCoach('${c.id}')">حذف</button></div>`).join('')}</div>`}
 function renderAddPlayer(tid){render()}
 function addTeam(){let name=document.getElementById('newTeamName').value.trim();if(!name)return toast('اكتب اسم الفريق');db.teams.push({id:id(),name,coachId:''});saveDB();render();toast('تمت إضافة الفريق')}
 function addPlayer(){let name=document.getElementById('playerName').value.trim(),teamId=document.getElementById('playerTeam').value,number=document.getElementById('playerNumber').value.trim();if(!name||!teamId)return toast('اكتب اسم اللاعب واختار الفريق');db.players.push({id:id(),name,teamId,number});saveDB();render();toast('تمت إضافة اللاعب')}
-function addCoach(){let name=document.getElementById('coachName').value.trim(),phone=document.getElementById('coachPhone').value.trim(),password=document.getElementById('coachPassword').value.trim(),teamId=document.getElementById('coachTeam').value;if(!name||!phone||password.length<4||!teamId)return toast('كمّل بيانات الكابتن');if(db.coaches.some(c=>c.phone===phone)||phone===db.manager.phone)return toast('رقم الموبايل مستخدم بالفعل');let c={id:id(),name,phone,password,teamId};db.coaches.push(c);let t=teamById(teamId);if(t)t.coachId=c.id;saveDB();render();toast('تم إنشاء حساب الكابتن')}
-function deleteCoach(cid){if(!confirm('تحذف حساب الكابتن؟'))return;db.coaches=db.coaches.filter(c=>c.id!==cid);db.teams.forEach(t=>{if(t.coachId===cid)t.coachId=''});saveDB();render()}
-function reportsPage(teams,isManager){let players=isManager?db.players:db.players.filter(p=>p.teamId===coach()?.teamId);let total=0;let rows=players.map(p=>{let entries=Object.entries(db.attendance).filter(([k,v])=>k.endsWith('_'+p.id));let pr=entries.filter(([k,v])=>v.status==='present').length,ab=entries.filter(([k,v])=>v.status==='absent').length,ex=entries.filter(([k,v])=>v.status==='excused').length;total+=entries.length;return `<div class="reportrow"><div><strong>${esc(p.name)}</strong><div class="small muted">${esc(teamById(p.teamId)?.name||'')}</div><div class="small">حاضر ${pr} · غائب ${ab} · معتذر ${ex}</div></div><strong>${entries.length?Math.round(pr/entries.length*100):0}%</strong></div>`});return `<div class="card"><h2>تقارير الحضور</h2><div class="grid"><div class="stat"><strong>${players.length}</strong><span>لاعب</span></div><div class="stat"><strong>${total}</strong><span>سجلات حالات</span></div></div>${rows.join('')||'<div class="empty">لا توجد بيانات بعد</div>'}<button class="primary" style="width:100%;margin-top:12px" onclick="exportCSV()">تصدير تقرير Excel (شهري)</button></div>`}
-function settingsPage(){return `<div class="card"><h2>الإعدادات والنسخ الاحتياطي</h2><p class="muted">احفظ نسخة احتياطية من بيانات التجربة، أو استرجع نسخة محفوظة قبل كده.</p><button class="primary" style="width:100%" onclick="backup()">تنزيل نسخة احتياطية</button><div class="field"><label>استرجاع نسخة JSON</label><input type="file" id="restoreFile" accept=".json,application/json"></div><button class="secondary" style="width:100%" onclick="restore()">استرجاع البيانات</button><button class="danger" style="width:100%;margin-top:10px" onclick="resetDemo()">إعادة بيانات التجربة الافتراضية</button><div class="notice" style="margin-top:14px">النسخة الحالية تعمل بدون إنترنت بعد فتحها، لكن كل جهاز له بياناته. النسخة النهائية تحتاج خادمًا آمنًا لتزامن الحضور بين المدير والكباتن.</div><p class="foot">Handball Academy Manager · إصدار تجريبي 2</p></div>`}
+async function addCoach(){let name=document.getElementById('coachName').value.trim(),email=document.getElementById('coachEmail').value.trim(),password=document.getElementById('coachPassword').value,phone=document.getElementById('coachPhone').value.trim(),teamId=document.getElementById('coachTeam').value;if(!name||!email||password.length<6||!teamId)return toast('اكتب الاسم والبريد وكلمة مرور 6 أحرف على الأقل واختار الفريق');try{const call=cloudFunctions.httpsCallable('createCoach');await call({name,email,password,phone,teamId});toast('تم إنشاء حساب الكابتن. يقدر يدخل بالبريد وكلمة المرور المحددين.')}catch(e){console.error(e);toast('إنشاء الحساب يحتاج نشر Cloud Function createCoach أولًا')}}
+async function deleteCoach(cid){if(!confirm('تحذف حساب الكابتن؟'))return;try{await cloudFunctions.httpsCallable('deleteCoach')({uid:cid});toast('تم حذف حساب الكابتن')}catch(e){console.error(e);toast('حذف الحساب يحتاج نشر Cloud Function deleteCoach أولًا')}}
+function reportsPage(teams,isManager){let players=isManager?db.players:db.players.filter(p=>p.teamId===coach()?.teamId);let total=0;let rows=players.map(p=>{let entries=Object.entries(db.attendance).filter(([k,v])=>k.endsWith('_'+p.id));let pr=entries.filter(([k,v])=>v.status==='present').length,ab=entries.filter(([k,v])=>v.status==='absent').length,ex=entries.filter(([k,v])=>v.status==='excused').length;total+=entries.length;return `<div class="reportrow"><div><strong>${esc(p.name)}</strong><div class="small muted">${esc(teamById(p.teamId)?.name||'')}</div><div class="small">حاضر ${pr} · غائب ${ab} · معتذر ${ex}</div></div><strong>${entries.length?Math.round(pr/entries.length*100):0}%</strong></div>`});return `<div class="card"><h2>تقارير الحضور</h2><div class="grid"><div class="stat"><strong>${players.length}</strong><span>لاعب</span></div><div class="stat"><strong>${total}</strong><span>سجلات حالات</span></div></div>${rows.join('')||'<div class="empty">لا توجد بيانات بعد</div>'}<button class="primary" style="width:100%;margin-top:12px" onclick="exportCSV()">تصدير التقرير CSV</button></div>`}
+function settingsPage(){return `<div class="card"><h2>الإعدادات والنسخ الاحتياطي</h2><p class="muted">احفظ نسخة احتياطية من بيانات التجربة، أو استرجع نسخة محفوظة قبل كده.</p><button class="primary" style="width:100%" onclick="backup()">تنزيل نسخة احتياطية</button><div class="field"><label>استرجاع نسخة JSON</label><input type="file" id="restoreFile" accept=".json,application/json"></div><button class="secondary" style="width:100%" onclick="restore()">استرجاع البيانات</button><button class="danger" style="width:100%;margin-top:10px" onclick="resetDemo()">إعادة بيانات التجربة الافتراضية</button><div class="notice" style="margin-top:14px">البيانات تُزامن عبر Firebase عند الاتصال بالإنترنت. تسجيل الدخول يتطلب حسابًا مفعلًا وصلاحيات صحيحة في Firestore.</div><p class="foot">Handball Academy Manager · إصدار تجريبي 2</p></div>`}
 function backup(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});download(blob,'handball-backup.json')}
 function restore(){let f=document.getElementById('restoreFile').files[0];if(!f)return toast('اختار ملف النسخة الاحتياطية');let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.teams||!x.players||!x.attendance)throw 0;db=x;saveDB();render();toast('تم استرجاع النسخة')}catch(e){toast('الملف غير صالح')}};r.readAsText(f)}
-function resetDemo(){if(!confirm('ده هيرجع بيانات التجربة الافتراضية ويمسح التعديلات الحالية على الجهاز. تكمل؟'))return;db=JSON.parse(JSON.stringify(initial));saveDB();render();toast('تمت إعادة البيانات')}
-function exportCSV(){
-  const allowedPlayers = db.players.filter(p => !session || session.role === 'manager' || p.teamId === coach()?.teamId);
-  const details = [['اللاعب','الفريق','التاريخ','الشهر','الحالة']];
-  const monthlyMap = {};
-  Object.entries(db.attendance || {}).forEach(([key,v]) => {
-    const parts=key.split('_'), pid=parts.pop(), date=parts.join('_');
-    const player=allowedPlayers.find(x=>x.id===pid); if(!player) return;
-    const team=teamById(player.teamId)?.name||'';
-    const status=v.status==='present'?'حاضر':v.status==='absent'?'غائب':v.status==='excused'?'معتذر':'غير محدد';
-    const month=String(date).slice(0,7);
-    details.push([player.name,team,date,month,status]);
-    const k=month+'|'+player.id;
-    if(!monthlyMap[k]) monthlyMap[k]={month,player:player.name,team,present:0,absent:0,excused:0,total:0};
-    monthlyMap[k].total++;
-    if(v.status==='present') monthlyMap[k].present++;
-    else if(v.status==='absent') monthlyMap[k].absent++;
-    else if(v.status==='excused') monthlyMap[k].excused++;
-  });
-  const monthly=[['الشهر','اللاعب','الفريق','أيام الحضور','أيام الغياب','أيام الاعتذار','إجمالي السجلات']];
-  Object.values(monthlyMap).sort((a,b)=>a.month.localeCompare(b.month)||a.player.localeCompare(b.player,'ar')).forEach(x=>monthly.push([x.month,x.player,x.team,x.present,x.absent,x.excused,x.total]));
-  const xmlEscape = v => String(v ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
-  const worksheet = (name, rows) => '<Worksheet ss:Name="'+xmlEscape(name)+'"><Table>'+rows.map(row=>'<Row>'+row.map(val=>{const numeric=typeof val==='number';return '<Cell><Data ss:Type="'+(numeric?'Number':'String')+'">'+xmlEscape(val)+'</Data></Cell>'}).join('')+'</Row>').join('')+'</Table></Worksheet>';
-  const workbook='<?xml version="1.0" encoding="UTF-8"?><?mso-application progid="Excel.Sheet"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">'+worksheet('الحصر الشهري',monthly)+worksheet('تفاصيل الحضور',details)+'</Workbook>';
-  download(new Blob(['\ufeff',workbook],{type:'application/vnd.ms-excel;charset=utf-8'}),'handball-monthly-report.xls');
-}
-function download(blob,name){
-  if(window.AndroidFileBridge && typeof window.AndroidFileBridge.saveFile==='function'){
-    const reader=new FileReader();
-    reader.onloadend=function(){
-      try{const base64=String(reader.result).split(',')[1];window.AndroidFileBridge.saveFile(name,blob.type||'application/octet-stream',base64)}
-      catch(e){toast('تعذّر فتح نافذة حفظ الملف')}
-    };
-    reader.onerror=function(){toast('تعذّر تجهيز الملف')}; reader.readAsDataURL(blob); return;
-  }
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);
-}
+function resetDemo(){toast('إعادة البيانات الافتراضية متوقفة في النسخة المتصلة بالسحابة لتجنب مسح بيانات الأكاديمية')}
+function exportCSV(){let lines=[['اللاعب','الفريق','التاريخ','الحالة']];Object.entries(db.attendance).forEach(([key,v])=>{let parts=key.split('_'),pid=parts.pop(),date=parts.join('_'),p=db.players.find(x=>x.id===pid);if(p&&(!session||session.role==='manager'||p.teamId===coach()?.teamId))lines.push([p.name,teamById(p.teamId)?.name||'',date,v.status==='present'?'حاضر':v.status==='absent'?'غائب':'معتذر'])});let csv='\ufeff'+lines.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\r\n');download(new Blob([csv],{type:'text/csv;charset=utf-8'}),'attendance-report.csv')}
+function download(blob,name){if(window.AndroidFileBridge&&typeof window.AndroidFileBridge.saveFile==='function'){const reader=new FileReader();reader.onload=()=>{try{const data=String(reader.result||'').split(',')[1]||'';window.AndroidFileBridge.saveFile(name,blob.type||'application/octet-stream',data)}catch(e){toast('تعذر تجهيز الملف للحفظ')}};reader.onerror=()=>toast('تعذر قراءة الملف للحفظ');reader.readAsDataURL(blob);return}const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 
+if(session&&cloudReady){session=null;localStorage.removeItem(SESSION)}
 render();
 </script>
 </body>
