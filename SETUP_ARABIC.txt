@@ -1,0 +1,20 @@
+Handball Academy Manager — ملاحظات الربط
+
+هذه حزمة مشروع مصدرية معدّلة جزئيًا، وليست APK نهائيًا ولا تدّعي أن المزامنة مفعلة بالفعل.
+
+أضفت:
+- supabase_setup.sql: مخطط جداول منفصل ham_* مع RLS وصلاحيات المدير والكابتن.
+- supabase/functions/admin-create-coach/index.ts: وظيفة خادمية لإنشاء حساب كابتن بعد التحقق من دور المدير.
+
+تحذير مهم: واجهة index.html الحالية في هذا المشروع ما زالت تعتمد على localStorage للفرق واللاعبين والحضور. لذلك لا تعتبر النسخة الحالية متزامنة لمجرد وجود ملفات SQL أو Edge Function. يلزم تعديل الواجهة لقراءة/كتابة ham_* بالكامل ثم اختبارها من جهازين قبل الاستخدام الفعلي.
+
+خطوات الخادم:
+1. راجع supabase_setup.sql قبل تشغيله؛ ينشئ جداول ham_* جديدة ولا يعدّل academy_* الحالية.
+2. تأكد أن Supabase Phone Auth مفعّل.
+3. أنشئ حساب المدير من Supabase Auth، ثم أضف ملفه في SQL Editor بعد استبدال AUTH_USER_UUID:
+   insert into public.ham_profiles(user_id,full_name,role) values ('AUTH_USER_UUID','مدير الأكاديمية','manager');
+4. انشر Edge Function باسم admin-create-coach.
+5. أضف أسرار الوظيفة: SUPABASE_URL وSUPABASE_ANON_KEY وSUPABASE_SERVICE_ROLE_KEY. لا تضع service_role داخل HTML أو APK.
+6. لا ترفع التطبيق الرسمي قبل ربط واجهة التطبيق بالجداول واختبار الصلاحيات والمزامنة فعليًا.
+
+لا تضع كلمات مرور المستخدمين داخل ملفات المشروع أو في localStorage.
