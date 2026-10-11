@@ -1,0 +1,41 @@
+ربط Handball Academy Manager بـ Firebase
+========================================
+
+ما الذي تم تعديله؟
+- تسجيل الدخول أصبح عبر Firebase Authentication بالبريد الإلكتروني وكلمة المرور.
+- قراءة الفرق واللاعبين والحضور من Cloud Firestore مباشرة، مع تحديثات لحظية.
+- الكابتن يقرأ فريقه ولاعبيه وحضور فريقه فقط بحسب صلاحيات Firestore.
+- إضافة/حذف حسابات الكباتن تتم عبر Cloud Functions موثوقة (لا تحفظ كلمات مرور الكباتن داخل التطبيق).
+- ملفات Firebase Rules والدوال موجودة في المشروع.
+
+مهم: هذه حزمة كود معدلة وليست خدمة منشورة تلقائيًا. يلزم نشر القواعد والدوال مرة واحدة وربط حساب المدير قبل الاستخدام على الأجهزة.
+
+الخطوات مرة واحدة على كمبيوتر عليه Node.js وFirebase CLI:
+1) فك ضغط Handball_Academy_Manager_Firebase_Connected.zip.
+2) افتح Terminal/CMD داخل مجلد المشروع الذي يحتوي firebase.json.
+3) ثبّت Firebase CLI إن لم يكن موجودًا: npm install -g firebase-tools
+4) سجّل الدخول: firebase login
+5) فعّل Email/Password من Firebase Console > Authentication > Sign-in method.
+6) تأكد أن Firestore Database منشأة.
+7) في Firebase Console > Authentication > Users، افتح حساب المدير الموجود أو أنشئه بالبريد وكلمة المرور. انسخ UID الخاص به.
+8) في Firestore Data، أنشئ مجموعة users ثم مستندًا ID بتاعه هو UID المدير نفسه، بهذه الحقول:
+   active: true (boolean)
+   role: "manager" (string)
+   name: "مدير الأكاديمية" (string)
+   email: "بريد المدير نفسه" (string)
+   لا تضع كلمة المرور داخل Firestore.
+9) انشر القواعد والدوال من مجلد المشروع:
+   firebase deploy --only firestore:rules,functions
+   نشر Cloud Functions قد يتطلب تفعيل خطة Blaze وربط وسيلة دفع في Firebase/Google Cloud.
+10) افتح المشروع في Android Studio لبناء APK من Build > Build APK(s). ضع النسخة المعدلة من index.html داخل app/src/main/assets (تم تضمينها بالفعل في الحزمة).
+
+الاستخدام:
+- المدير يدخل بالبريد وكلمة المرور المسجلين في Firebase Authentication.
+- بعد تهيئة حساب المدير ونشر الدوال، ينشئ المدير حساب الكابتن من صفحة الفرق: الاسم + بريد الكابتن + كلمة مرور مؤقتة + الفريق.
+- يرسل المدير بيانات الدخول للكابتن بشكل خاص، ويُفضّل تغيير كلمة المرور بعد أول دخول.
+- كل جهاز يحتاج إنترنت للمزامنة. الدخول برقم الموبايل/SMS غير موصل في هذه النسخة؛ الدخول الحالي بالبريد وكلمة المرور لتجنب ادعاء أن OTP يعمل قبل إكمال reCAPTCHA وإعدادات Phone Auth.
+
+ملاحظات مهمة:
+- لا تنشر كلمة مرور المدير أو مفاتيح Admin SDK داخل التطبيق.
+- ملف API key الخاص بتطبيق الويب ليس بديلًا عن قواعد Firestore؛ الأمان يعتمد على Authentication وRules.
+- اختبر بحساب مدير وحساب كابتن تجريبيين قبل إدخال بيانات اللاعبين الحقيقية.
