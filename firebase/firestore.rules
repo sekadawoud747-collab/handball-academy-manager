@@ -1,1 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function profile() { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+    function isManager() { return signedIn() && profile().role == 'manager' && profile().active == true; }
+    function isActiveCoach() { return signedIn() && profile().role == 'coach' && profile().active == true; }
+    function coachOwnsTeam(teamId) { return isActiveCoach() && profile().teamId == teamId; }
 
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isManager());
+      allow write: if false; // user provisioning only through trusted Cloud Functions/Admin SDK
+    }
+    match /teams/{teamId} {
+      allow read: if isManager() || coachOwnsTeam(teamId);
+      allow create, update, delete: if isManager();
+    }
+    match /players/{playerId} {
+      allow read: if isManager() || (isActiveCoach() && resource.data.teamId == profile().teamId);
+      allow create: if isManager();
+      allow update: if isManager() || (isActiveCoach() && resource.data.teamId == profile().teamId && request.resource.data.teamId == profile().teamId);
+      allow delete: if isManager();
+    }
+    match /attendance/{attendanceId} {
+      allow read: if isManager() || (isActiveCoach() && resource.data.teamId == profile().teamId);
+      allow create: if isManager() || (isActiveCoach() && request.resource.data.teamId == profile().teamId);
+      allow update: if isManager() || (isActiveCoach() && resource.data.teamId == profile().teamId && request.resource.data.teamId == profile().teamId);
+      allow delete: if isManager() || (isActiveCoach() && resource.data.teamId == profile().teamId);
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}
