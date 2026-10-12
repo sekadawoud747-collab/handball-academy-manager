@@ -2,8 +2,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:theme="@android:style/Theme.Material.Light.NoActionBar"
-        android:label="إدارة أكاديمية كرة اليد"
+        android:theme="@style/AppTheme"
+        android:label="Handball Academy Manager"
+        android:icon="@drawable/handball_academy_icon"
+        android:roundIcon="@drawable/handball_academy_icon"
         android:usesCleartextTraffic="false"
         android:hardwareAccelerated="true">
 
