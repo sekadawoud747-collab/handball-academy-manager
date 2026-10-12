@@ -10,45 +10,6 @@
 :root{--navy:#102a43;--blue:#1f6feb;--pale:#eaf2f8;--bg:#f3f6fa;--ink:#142333;--muted:#64748b;--green:#16845b;--red:#c0392b;--amber:#a96500}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 14px;font-weight:700}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:var(--navy);color:white}.secondary{background:var(--pale);color:var(--navy)}.danger{background:#feeceb;color:var(--red)}.success{background:#e4f6ee;color:var(--green)}.muted{color:var(--muted)}.small{font-size:12px}.appbar{background:var(--navy);color:white;padding:18px 16px 24px;border-radius:0 0 24px 24px}.brand{display:flex;align-items:center;gap:12px}.ball{width:52px;height:52px;flex-shrink:0;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--navy);font-size:30px}.appbar h1{font-size:18px;margin:0}.appbar p{font-size:12px;margin:4px 0 0;color:#d6e4f0}.appbar .topline{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:13px}.wrap{max-width:760px;margin:auto;padding:14px 14px 90px}.card{background:white;border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 4px 18px #102a430c}.card h2{font-size:17px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{background:#f7f9fc;border:1px solid #edf1f5;border-radius:14px;padding:14px}.stat strong{display:block;font-size:25px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field label{font-size:13px;font-weight:700}.field input,.field select{width:100%;padding:12px;border:1px solid #d8e0e8;border-radius:11px;background:white;color:var(--ink)}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5eaf0;display:flex;justify-content:center;gap:4px;padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:5}.nav button{flex:1;max-width:150px;background:transparent;color:var(--muted);font-size:12px;padding:8px 3px}.nav button.active{background:var(--pale);color:var(--navy)}.player{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #edf1f5}.player:last-child{border-bottom:0}.avatar{width:38px;height:38px;border-radius:12px;background:var(--pale);display:grid;place-items:center;font-weight:800;color:var(--navy)}.playerinfo{flex:1;min-width:0}.playerinfo strong{display:block;font-size:14px}.playerinfo small{color:var(--muted)}.statusbtn{padding:8px 9px;font-size:12px;min-width:67px}.present{background:#e3f6ed;color:var(--green)}.absent{background:#ffebea;color:var(--red)}.excused{background:#fff2d9;color:var(--amber)}.pill{display:inline-block;border-radius:20px;padding:5px 9px;background:#edf2f7;font-size:11px;color:var(--navy)}.empty{text-align:center;padding:26px 10px;color:var(--muted)}.hidden{display:none!important}.notice{background:#fff5d9;border:1px solid #f5df9d;color:#795000;padding:11px 12px;border-radius:12px;font-size:12px;line-height:1.6}.login{max-width:430px;margin:28px auto;padding:0 16px}.login .card{padding:22px}.loginlogo{text-align:center;padding:18px 0}.loginlogo .ball{margin:0 auto 10px;width:72px;height:72px;font-size:42px}.loginlogo h1{font-size:21px;margin:0}.loginlogo p{margin:5px;color:var(--muted);font-size:13px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px}.sectionhead h2{margin:0}.reportrow{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #edf1f5;font-size:13px}.reportrow:last-child{border:0}.toast{position:fixed;top:12px;left:12px;right:12px;z-index:20;background:#142333;color:white;border-radius:12px;padding:13px;text-align:center;box-shadow:0 8px 30px #0002}.foot{text-align:center;color:var(--muted);font-size:11px;margin-top:20px}
 @media(min-width:600px){.wrap{padding-top:22px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.appbar{padding-left:max(20px,calc((100% - 730px)/2));padding-right:max(20px,calc((100% - 730px)/2))}}
-
-/* Premium Handball Academy visual refresh */
-:root{--navy:#06152b;--blue:#168cff;--pale:#102d4d;--bg:#030b19;--ink:#eef5ff;--muted:#94a9c7;--green:#17d6a0;--red:#ff4f69;--amber:#ffb12b}
-html{background:#030b19}body{background:radial-gradient(ellipse at 15% 0%,#123e75 0,transparent 35%),radial-gradient(ellipse at 95% 16%,#74301f 0,transparent 29%),linear-gradient(160deg,#06152b 0%,#020817 62%,#071b32 100%);background-attachment:fixed;color:var(--ink);min-height:100vh}
-button{transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}button:active{transform:scale(.98)}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #21a5ff;outline-offset:2px}
-.primary{background:linear-gradient(105deg,#ff3b72 0%,#ff6a21 52%,#ffbf19 100%);color:#08152b;box-shadow:0 7px 24px #ff632c30;font-weight:850}
-.secondary{background:linear-gradient(135deg,#123b68,#0a2140);color:#eaf4ff;border:1px solid #25507e}
-.danger{background:#40182b;color:#ff9eb0}.success{background:#0b3c39;color:#66f0cb}
-.appbar{position:relative;overflow:hidden;background:linear-gradient(112deg,#07172f 0%,#0b2b50 57%,#10213a 100%);border-radius:0 0 28px 28px;border-bottom:1px solid #1b5282;box-shadow:0 14px 35px #0004}
-.appbar:after{content:"";position:absolute;width:220px;height:220px;right:-70px;top:-110px;border:1px solid #2f8df355;border-radius:50%;box-shadow:0 0 0 24px #168cff0a,0 0 0 50px #168cff08;pointer-events:none}
-.brand,.topline{position:relative;z-index:1}.ball{background:linear-gradient(145deg,#168cff,#163f82 65%,#ff842b);color:white;border:1px solid #75c4ff70;box-shadow:0 0 25px #168cff45;border-radius:17px}
-.appbar h1{letter-spacing:.2px;font-weight:850}.appbar p{color:#a8c9ec}
-.wrap{padding-top:16px}
-.card{background:linear-gradient(145deg,#0b1c33f5,#071426f5);border:1px solid #193b60;box-shadow:0 10px 28px #0003,inset 0 1px #ffffff08;color:var(--ink);border-radius:20px}
-.card h2{color:#f3f7ff}.grid{gap:11px}
-.stat{background:linear-gradient(145deg,#102c4b,#0a1a30);border:1px solid #1e4c76;border-radius:17px;box-shadow:inset 0 1px #ffffff08}
-.stat strong{color:#53b7ff}.stat:nth-child(2) strong{color:#20dfb0}.stat:nth-child(3) strong{color:#ffb22d}.stat:nth-child(4) strong{color:#ff6f91}
-.field label{color:#c7d9f0}.field input,.field select{background:#06162b;color:#f0f6ff;border:1px solid #21476f;border-radius:13px;padding:13px}.field input::placeholder{color:#7188a8}.field input:focus,.field select:focus{border-color:#168cff;box-shadow:0 0 0 3px #168cff20;outline:0}
-.nav{background:#061329f5;backdrop-filter:blur(18px);border-top:1px solid #1b3d61;box-shadow:0 -8px 24px #0003}.nav button{color:#8099b9;border-radius:12px}.nav button.active{background:linear-gradient(135deg,#103b68,#13294a);color:#ffbd36;box-shadow:inset 0 0 0 1px #267ac0}
-.player{border-color:#18314f}.avatar{background:linear-gradient(145deg,#0f6fbd,#142b51);color:white;border:1px solid #2d8ee0}.pill{background:#102e4d;color:#a9d8ff;border:1px solid #22527e}
-.present{background:#0a3d39;color:#5cf0c6}.absent{background:#451c31;color:#ff9ab0}.excused{background:#49351a;color:#ffd17a}
-.notice{background:#332b1a;border-color:#74531f;color:#ffe1a1}.toast{background:#102b49;border:1px solid #2a6ca4;color:white;box-shadow:0 10px 35px #0008}
-.sectionhead h2{color:#f5f8ff}.reportrow{border-color:#19324f}.foot{color:#8299b8}
-.login{max-width:460px;margin:0 auto;padding:0 17px 34px}
-.login .card{padding:22px 20px 20px;border-radius:24px;background:linear-gradient(150deg,#07162bf5,#030b18f8);border:1px solid #1c426b;box-shadow:0 22px 55px #0007,0 0 35px #168cff0c}
-.loginlogo{position:relative;overflow:hidden;margin:0 -17px 18px;padding:26px 18px 22px;min-height:265px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;background:radial-gradient(ellipse at 18% 38%,#087eea55,transparent 40%),radial-gradient(ellipse at 90% 15%,#ff7b2450,transparent 36%),linear-gradient(155deg,#07172e,#0b2d4c 57%,#061225);border-bottom:1px solid #24517b;border-radius:0 0 30px 30px}
-.loginlogo:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#020a1455 0%,#06152b20 40%,#020916e8 100%),url("handball_academy_icon.png") center 25%/min(58vw,225px) auto no-repeat;opacity:.98;pointer-events:none}
-.loginlogo:after{content:"";position:absolute;width:240px;height:240px;top:-135px;left:-80px;border:1px solid #4caaff55;border-radius:50%;box-shadow:0 0 0 20px #168cff0c,0 0 0 43px #168cff09}
-.loginlogo .ball{display:none}.loginlogo h1,.loginlogo p{position:relative;z-index:1}
-.loginlogo h1{font-size:25px;line-height:1.2;font-weight:950;letter-spacing:-.4px;color:#fff;text-shadow:0 3px 16px #000}
-.loginlogo h1 span{color:#ff9b28}.loginlogo p{color:#bad4f3!important;font-size:12px!important;letter-spacing:2.3px;text-transform:uppercase;margin-top:8px!important}
-.login .card h2{font-size:19px;margin-bottom:17px}
-.login .field{margin:13px 0}.login .field input{padding:15px 14px;background:#06162b;border-color:#1b3c61}
-.login .primary{padding:15px;border-radius:14px;font-size:15px;letter-spacing:.2px}
-.login .notice{border-radius:13px;font-size:11px;background:#111f34;border-color:#243d5d;color:#9bb8d9}
-.login .small.muted{color:#7f98b9;line-height:1.6}
-.login .foot{margin-top:15px}
-@media(min-width:600px){.login{padding-top:20px}.loginlogo{border-radius:0 0 32px 32px}}
-
 </style>
 </head>
 <body>
@@ -89,16 +50,27 @@ async function login(email,password,role){
  if(!email||!password){toast('اكتب البريد الإلكتروني وكلمة المرور');return}
  try {
    const cred=await auth.signInWithEmailAndPassword(email,password);
-   const snap=await store.collection('users').doc(cred.user.uid).get();
-   if(!snap.exists){await auth.signOut();toast('الحساب موجود لكن المدير لم يحدد صلاحياته بعد.');return}
+   let snap=await store.collection('users').doc(cred.user.uid).get();
+   if(!snap.exists){
+     try {
+       await cloudFunctions.httpsCallable('repairMyProfile')({});
+       snap=await store.collection('users').doc(cred.user.uid).get();
+     } catch(repairError) { console.warn('Profile repair skipped',repairError); }
+   }
+   if(!snap.exists){await auth.signOut();toast('الحساب موجود لكن ملف الصلاحيات غير موجود. انشر دوال Firebase وتأكد من مستند users المطابق للحساب.');return}
    const profile=snap.data();
    if(profile.active!==true || !['manager','coach'].includes(profile.role)){await auth.signOut();toast('الحساب موقوف أو صلاحياته غير صحيحة');return}
+   localStorage.setItem('ham_last_email',email);
    session={id:cred.user.uid,uid:cred.user.uid,name:profile.name||email,role:profile.role,teamId:profile.teamId||'',email};
    localStorage.setItem(SESSION,JSON.stringify(session));
    tab='home'; await startCloudSync(); render();
  } catch(e){console.error(e);toast(firebaseError(e));}
 }
 function firebaseError(e){const c=e&&e.code||'';if(c.includes('wrong-password')||c.includes('invalid-credential')||c.includes('user-not-found'))return 'البريد الإلكتروني أو كلمة المرور غير صحيحة';if(c.includes('network'))return 'مفيش اتصال بالإنترنت';if(c.includes('too-many-requests'))return 'محاولات كثيرة. استنى شوية وجرب تاني';return 'تعذر تسجيل الدخول: '+(e&&e.message?e.message:c)}
+let authMode='login', bootstrapStatusChecked=false;
+async function detectFirstRun(){if(!cloudReady||!cloudFunctions){authMode='login';bootstrapStatusChecked=true;render();return}try{const result=await cloudFunctions.httpsCallable('getBootstrapStatus')({});authMode=result.data&&result.data.initialized?'login':'register'}catch(e){console.error('Bootstrap status unavailable',e);authMode='login'}bootstrapStatusChecked=true;render()}
+function switchAuthMode(mode){if(mode==='register'&&authMode!=='register')return;authMode=mode;render()}
+async function registerFirstManager(){const name=document.getElementById('regName')?.value.trim()||'',email=document.getElementById('regEmail')?.value.trim()||'',password=document.getElementById('regPassword')?.value||'';if(!name||!email||password.length<6)return toast('اكتب الاسم والبريد وكلمة مرور 6 أحرف على الأقل');if(!cloudReady||!cloudFunctions)return toast('خدمة التسجيل غير جاهزة؛ انشر دوال Firebase أولاً');try{await cloudFunctions.httpsCallable('bootstrapManager')({name,email,password});authMode='login';localStorage.setItem('ham_last_email',email);render();const input=document.getElementById('phone');if(input)input.value=email;toast('تم إنشاء حساب المدير. سجّل دخولك الآن بنفس البريد وكلمة المرور.')}catch(e){console.error('First manager registration failed',e);const msg=e?.message||'';if((e?.code||'').includes('already-exists')||msg.includes('already-exists')||msg.includes('already exists')||msg.includes('تم إعداد حساب المدير بالفعل')){authMode='login';render();toast('تم إعداد حساب المدير من قبل. سجّل الدخول.')}else toast('فشل إنشاء الحساب: '+msg)}}
 async function startCloudSync(){
  stopCloudSync(); if(!session||!cloudReady)return;
  const role=session.role, uid=session.uid;
@@ -126,7 +98,7 @@ async function syncToCloud(){
  }catch(e){console.error(e);toast('لم تتم المزامنة: راجع صلاحيات Firestore');}
 }
 async function logout(){stopCloudSync();if(auth){try{await auth.signOut()}catch(e){}}session=null;localStorage.removeItem(SESSION);render()}
-function render(){const root=document.getElementById('app');if(!session){root.innerHTML=`<div class="login"><div class="loginlogo"><div class="ball">🤾</div><h1>Handball <span>Academy</span></h1><p>MANAGER · TRAIN · BUILD CHAMPIONS</p></div><div class="card"><h2>Welcome Back <span style="color:#ff9b28">/</span> تسجيل الدخول</h2><div class="field"><label>البريد الإلكتروني</label><input id="phone" type="email" autocomplete="username" placeholder="name@example.com" aria-label="Email address"></div><div class="field"><label>كلمة المرور</label><input id="password" type="password" autocomplete="current-password" placeholder="كلمة المرور" aria-label="Password"></div><button class="primary" style="width:100%" onclick="login(document.getElementById('phone').value,document.getElementById('password').value)">Login · دخول</button><div class="notice" style="margin-top:14px">تسجيل الدخول متصل بـ Firebase. لازم يكون الحساب مضافًا في Authentication وله صلاحية داخل users في Firestore.</div><p class="small muted">Better Coaches · Stronger Teams · Brighter Future</p></div><p class="foot">HANDball ACADEMY MANAGER · OFFICIAL APP</p></div>`;return}
+function render(){const root=document.getElementById('app');if(!session){const lastEmail=esc(localStorage.getItem('ham_last_email')||'');if(!bootstrapStatusChecked){root.innerHTML=`<div class="login"><div class="loginlogo"><div class="ball">🤾</div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد والحضور</p></div><div class="card"><h2>جاري تجهيز شاشة الحساب…</h2><p class="small muted">لحظة واحدة.</p></div></div>`;return}if(authMode==='register'){root.innerHTML=`<div class="login"><div class="loginlogo"><div class="ball">🤾</div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد والحضور</p></div><div class="card"><h2>إنشاء حساب المدير لأول مرة</h2><p class="small muted">الشاشة دي تظهر مرة واحدة فقط عند إعداد الأكاديمية لأول مرة.</p><div class="field"><label>اسم المدير</label><input id="regName" autocomplete="name" placeholder="الاسم بالكامل"></div><div class="field"><label>البريد الإلكتروني</label><input id="regEmail" type="email" autocomplete="email" placeholder="name@example.com"></div><div class="field"><label>كلمة المرور (6 أحرف على الأقل)</label><input id="regPassword" type="password" autocomplete="new-password" placeholder="أنشئ كلمة مرور قوية"></div><button class="primary" style="width:100%" onclick="registerFirstManager()">إنشاء حساب الأكاديمية</button><div class="notice" style="margin-top:14px">بعد إنشاء الحساب، ستظهر شاشة تسجيل الدخول. لا تشارك كلمة المرور مع أي شخص.</div></div><p class="foot">HANDball ACADEMY MANAGER · OFFICIAL APP</p></div>`;return}root.innerHTML=`<div class="login"><div class="loginlogo"><div class="ball">🤾</div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد والحضور</p></div><div class="card"><h2>تسجيل الدخول</h2><div class="field"><label>البريد الإلكتروني</label><input id="phone" type="email" autocomplete="username" placeholder="name@example.com" value="${lastEmail}"></div><div class="field"><label>كلمة المرور</label><input id="password" type="password" autocomplete="current-password" placeholder="كلمة المرور"></div><button class="primary" style="width:100%" onclick="login(document.getElementById('phone').value,document.getElementById('password').value)">دخول</button><div class="notice" style="margin-top:14px">استخدم البريد وكلمة المرور اللذين أنشأتهما لحساب الأكاديمية.</div></div><p class="foot">HANDball ACADEMY MANAGER · OFFICIAL APP</p></div>`;return}
 const isManager=session.role==='manager';const teams=visibleTeams();if(!chosenTeam||!teams.some(t=>t.id===chosenTeam))chosenTeam=teams[0]?.id||'';
 root.innerHTML=`<header class="appbar"><div class="brand"><div class="ball">🤾</div><div><h1>Handball Academy Manager</h1><p>إدارة أكاديمية كرة اليد</p></div></div><div class="topline"><span>${esc(session.name)} · ${isManager?'مدير الأكاديمية':'كابتن الفريق'}</span><button class="secondary" style="padding:7px 10px;font-size:12px" onclick="logout()">خروج</button></div></header><main class="wrap">${tab==='home'?homePage(teams,isManager):tab==='attendance'?attendancePage(teams):tab==='teams'?teamsPage():tab==='reports'?reportsPage(teams,isManager):settingsPage()}</main><nav class="nav"><button class="${tab==='home'?'active':''}" onclick="tab='home';render()">🏠<br>الرئيسية</button><button class="${tab==='attendance'?'active':''}" onclick="tab='attendance';render()">✅<br>الحضور</button>${isManager?`<button class="${tab==='teams'?'active':''}" onclick="tab='teams';render()">👥<br>الفرق</button>`:''}<button class="${tab==='reports'?'active':''}" onclick="tab='reports';render()">📊<br>التقارير</button><button class="${tab==='settings'?'active':''}" onclick="tab='settings';render()">⚙️<br>الإعدادات</button></nav>`;
 }
@@ -153,6 +125,7 @@ function download(blob,name){if(window.AndroidFileBridge&&typeof window.AndroidF
 
 if(session&&cloudReady){session=null;localStorage.removeItem(SESSION)}
 render();
+detectFirstRun();
 </script>
 </body>
 </html>
