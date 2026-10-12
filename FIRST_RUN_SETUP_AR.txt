@@ -1,0 +1,33 @@
+إعداد التسجيل لأول مرة وتشغيل Android وiPhone
+================================================
+
+ما تم تغييره:
+1) أول تشغيل على مشروع Firebase جديد: تظهر شاشة إنشاء حساب المدير مرة واحدة.
+2) التسجيل ينشئ حساب Firebase Authentication وملف users/{UID} بصلاحية manager من Cloud Function موثوقة، وليس من الهاتف.
+3) بعد إنشاء الحساب تظهر شاشة تسجيل الدخول، وعند فتح التطبيق مرة أخرى يطلب تسجيل الدخول.
+4) تم الاحتفاظ بقواعد Firestore التي تمنع التطبيق من منح نفسه صلاحيات المدير.
+5) تمت إضافة نسخة PWA داخل مجلد web لتعمل على iPhone وAndroid من المتصفح ويمكن إضافتها للشاشة الرئيسية.
+
+مهم: لا يمكن تشغيل التسجيل الأول من التطبيق قبل نشر الدوال الجديدة. نفّذ الأوامر التالية من داخل مجلد project بعد تثبيت Firebase CLI وتسجيل الدخول:
+
+  npm --prefix functions install
+  firebase use handball-academy-manager-fe8e4
+  firebase deploy --only functions,firestore:rules,hosting
+
+قد يتطلب نشر Cloud Functions تفعيل الفوترة (Blaze) في Firebase. لا تفتح قواعد users للكتابة العامة؛ الدالة الموثوقة هي التي تنشئ ملف المدير.
+
+Android:
+- بعد رفع التغييرات إلى فرع main في GitHub، افتح Actions وشغّل Build Handball Academy APK.
+- نزّل artifact باسم Handball-Academy-APK وثبّت APK الناتج على Android.
+- ملف Android يستخدم app/src/main/assets/index.html.
+
+iPhone وAndroid بدون متجر:
+- Firebase Hosting ينشر نسخة الويب من مجلد web عبر HTTPS.
+- افتح رابط Hosting على iPhone في Safari ثم Share > Add to Home Screen.
+- على Android افتح الرابط في Chrome ثم القائمة > Install app / Add to Home screen.
+- نسخة PWA تعتمد على اتصال الإنترنت لاستخدام Firebase. التخزين المؤقت يحفظ واجهة التطبيق فقط، وليس تسجيل الدخول أو المزامنة دون إنترنت.
+
+ملاحظة للمشروع الحالي:
+- إذا كان في Firestore بالفعل مستخدم بصلاحية role=manager، فستظهر شاشة تسجيل الدخول مباشرة، لأن التسجيل الأول مخصص للأكاديمية غير المُهيّأة فقط.
+- إذا ظهر أن ملف الصلاحيات غير موجود، راجع أن معرّف مستند users هو UID نفسه الظاهر في Firebase Authentication؛ لا تجعل القواعد عامة لتجاوز المشكلة.
+- نشر PWA لا ينشئ تطبيق iOS أصليًا في App Store. نشر تطبيق iOS أصلي يتطلب مشروع iOS وتوقيع Apple Developer/Xcode.
