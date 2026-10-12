@@ -91,12 +91,19 @@ async function login(email,password,role){
    const cred=await auth.signInWithEmailAndPassword(email,password);
    const snap=await store.collection('users').doc(cred.user.uid).get();
    if(!snap.exists){
-     const missingUid=cred.user.uid;
-     const projectId=FIREBASE_CONFIG.projectId;
-     console.error('Missing Firestore profile', {projectId, collection:'users', documentId:missingUid, email:cred.user.email});
-     await auth.signOut();
-     toast('ملف الصلاحيات غير موجود. المشروع: '+projectId+' — Document ID المطلوب: '+missingUid);
-     return
+     const bootstrapSecret=window.prompt('هذا الحساب لا يملك ملف صلاحيات. لو أنت صاحب المشروع وتجهّز أول مدير، أدخل كود إعداد المدير الذي ضبطته في Firebase Functions. اتركه فارغًا للإلغاء.');
+     if(!bootstrapSecret){await auth.signOut();toast('لم يتم تغيير الصلاحيات');return}
+     try {
+       await cloudFunctions.httpsCallable('claimFirstManager')({bootstrapSecret});
+       const repaired=await store.collection('users').doc(cred.user.uid).get();
+       if(!repaired.exists){await auth.signOut();toast('لم يتم إنشاء ملف المدير؛ راجع إعداد Firebase Functions');return}
+       snap= repaired;
+     } catch(bootstrapError) {
+       console.error('Manager bootstrap failed', {projectId:FIREBASE_CONFIG.projectId, uid:cred.user.uid, code:bootstrapError.code, message:bootstrapError.message});
+       await auth.signOut();
+       toast(bootstrapError?.message || 'تعذر إعداد المدير. تأكد من نشر الدوال وكود الإعداد.');
+       return;
+     }
    }
    const profile=snap.data();
    if(profile.active!==true || !['manager','coach'].includes(profile.role)){await auth.signOut();toast('الحساب موقوف أو صلاحياته غير صحيحة');return}
